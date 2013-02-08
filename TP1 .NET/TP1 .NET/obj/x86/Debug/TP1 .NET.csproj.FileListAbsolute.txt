@@ -1,0 +1,5 @@
+c:\users\prea_a\documents\visual studio 2010\Projects\TP1 .NET\TP1 .NET\bin\Debug\TP1.NET.exe
+c:\users\prea_a\documents\visual studio 2010\Projects\TP1 .NET\TP1 .NET\bin\Debug\TP1.NET.pdb
+c:\users\prea_a\documents\visual studio 2010\Projects\TP1 .NET\TP1 .NET\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\prea_a\documents\visual studio 2010\Projects\TP1 .NET\TP1 .NET\obj\x86\Debug\TP1.NET.exe
+c:\users\prea_a\documents\visual studio 2010\Projects\TP1 .NET\TP1 .NET\obj\x86\Debug\TP1.NET.pdb
