@@ -120,6 +120,28 @@
 				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
+		<Storyboard x:Key="Time_position_mouse_leave">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Toolbars_menu">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Loop_random">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Time_position_screen">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Loop_random_mouse_leave">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Loop_random">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Time_position_screen">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Toolbars_menu">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
 	</Window.Resources>
 	<Window.Triggers>
 		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Video_Grid">
@@ -142,6 +164,12 @@
 		</EventTrigger>
 		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Toolbars_menu">
 			<BeginStoryboard x:Name="Toolbar_mouse_enter_BeginStoryboard" Storyboard="{StaticResource Toolbar_mouse_enter}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Time_position_screen">
+			<BeginStoryboard x:Name="Time_position_mouse_leave_BeginStoryboard" Storyboard="{StaticResource Time_position_mouse_leave}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Loop_random">
+			<BeginStoryboard x:Name="Loop_random_mouse_leave_BeginStoryboard" Storyboard="{StaticResource Loop_random_mouse_leave}"/>
 		</EventTrigger>
 	</Window.Triggers>
 	<Grid x:Name="Grid_Background" Style="{DynamicResource Template Basical skin}" Margin="-4.5,0,0,1.5">
@@ -170,7 +198,7 @@
 			</ListBox>
 		</Grid>
 		<Grid x:Name="Video_Grid" Margin="150,0,0,0" Background="#FFEF1717" Opacity="0.25"/>
-		<Grid x:Name="Toolbars_menu" Margin="150,0,0,0" Height="57" VerticalAlignment="Bottom" Opacity="0" RenderTransformOrigin="0.5,0.5">
+		<Grid x:Name="Toolbars_menu" Margin="150,0,0,0" Height="57" VerticalAlignment="Bottom" Opacity="0.5" RenderTransformOrigin="0.5,0.5">
 			<Grid.RenderTransform>
 				<TransformGroup>
 					<ScaleTransform/>
@@ -194,7 +222,7 @@
 			<Slider x:Name="Sound_On_Off" HorizontalAlignment="Right" Margin="0,13.5,8,8" Width="84.5"/>
 			<Button x:Name="Button_Sound"  Content="Sound" Margin="0,13.5,96.5,13.5" Height="30" Width="70" Template="{DynamicResource Template blue Command video}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="1.351,0.417" HorizontalAlignment="Right" d:LayoutOverrides="Width"/>
 		</Grid>
-		<Grid x:Name="Time_position_screen" Height="67" Margin="150,0,0,0" VerticalAlignment="Top" Opacity="0">
+		<Grid x:Name="Time_position_screen" Height="67" Margin="150,0,0,0" VerticalAlignment="Top" Opacity="0.5">
 			<Grid.Background>
 				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 					<GradientStop Color="Black" Offset="0"/>
@@ -202,9 +230,11 @@
 				</LinearGradientBrush>
 			</Grid.Background>
 			<Slider x:Name="Position" Margin="80,20,8,12" Height="35"/>
-			<Button x:Name="Button_Full_Screen" Content="Play" Margin="0,20,0,17" Height="30" Template="{DynamicResource Template blue Command video}" Width="70" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
+			<Button x:Name="Button_Full_Screen" Margin="0,20,0,17" Height="30" Template="{DynamicResource Template blue Command video}" Width="70" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" HorizontalAlignment="Left" d:LayoutOverrides="Width">
+				<Image Source="Images\Full%20Screen.png" />
+			</Button>
 		</Grid>
-		<Grid x:Name="Loop_random" HorizontalAlignment="Right" Margin="0,214,0,220" Width="63" Opacity="0" MaxHeight="150">
+		<Grid x:Name="Loop_random" HorizontalAlignment="Right" Margin="0,214,0,220" Width="63" Opacity="0.5" MaxHeight="150">
 			<Grid.Background>
 				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 					<GradientStop Color="Black" Offset="0"/>
