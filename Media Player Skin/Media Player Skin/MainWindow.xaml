@@ -142,6 +142,150 @@
 				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
+		<ControlTemplate x:Key="ButtonControlTemplate2" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Image Source="Full_Screen.png" Height="30.667" Width="33.667" />
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</ControlTemplate>
+		<ControlTemplate x:Key="ButtonControlTemplate3" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Image Source="Loop.png" Height="36.667" Width="33.667" />
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</ControlTemplate>
+		<ControlTemplate x:Key="ButtonControlTemplate4" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Image Source="Random.png" Height="30.667" Width="31.667" />
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</ControlTemplate>
+		<ControlTemplate x:Key="ButtonControlTemplate5" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Image Source="Break.png" Height="30.667" Width="29.667"/>
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</ControlTemplate>
+		<ControlTemplate x:Key="ButtonControlTemplate6" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Image Source="Fast_next.png" Width="35" Height="28.667"/>
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</ControlTemplate>
+		<ControlTemplate x:Key="ButtonControlTemplate7" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Image Source="Play.png" Height="35.667" Width="38.667"/>
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</ControlTemplate>
+		<ControlTemplate x:Key="ButtonControlTemplate8" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Image Source="Fast_back.png" Height="29.667" Width="30.667" />
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</ControlTemplate>
+		<ControlTemplate x:Key="ButtonControlTemplate9" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Image Source="Next.png" Height="29.667" Width="35.667" />
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</ControlTemplate>
+		<ControlTemplate x:Key="ButtonControlTemplate10" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Image Source="Back.png" Height="32.667" Width="34.667" />
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</ControlTemplate>
+		<ControlTemplate x:Key="ButtonControlTemplate11" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Image Source="Sound_On.png" Height="28.667" Width="34.667" />
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</ControlTemplate>
+		<ControlTemplate x:Key="ButtonControlTemplate12" TargetType="{x:Type Button}">
+			<Button Margin="10.917,-14,-1.917,-11.667" Style="{DynamicResource Buttun test 1}">
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFF3F3F3" Offset="0"/>
+						<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+						<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+						<GradientStop Color="White" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+				<Image Source="Sound_Off.png" Height="28.667" Width="34.667" />
+			</Button>
+		</ControlTemplate>
+		<Storyboard x:Key="Sound_Click"/>
 	</Window.Resources>
 	<Window.Triggers>
 		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Video_Grid">
@@ -170,6 +314,9 @@
 		</EventTrigger>
 		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Loop_random">
 			<BeginStoryboard x:Name="Loop_random_mouse_leave_BeginStoryboard" Storyboard="{StaticResource Loop_random_mouse_leave}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Button_Sound">
+			<BeginStoryboard x:Name="Sound_Click_BeginStoryboard" Storyboard="{StaticResource Sound_Click}"/>
 		</EventTrigger>
 	</Window.Triggers>
 	<Grid x:Name="Grid_Background" Style="{DynamicResource Template Basical skin}" Margin="-4.5,0,0,1.5">
@@ -213,14 +360,14 @@
 					<GradientStop Color="White"/>
 				</LinearGradientBrush>
 			</Grid.Background>
-			<Button x:Name="Button_Break" Margin="230,13.5,0,13.5" Height="30" Width="70" Template="{DynamicResource Template blue Command video}" HorizontalAlignment="Left" d:LayoutOverrides="Width" Content="Break"/>
-			<Button x:Name="Button_Fast_Advence" Content="Fast Advence" Height="30" Width="70" Template="{DynamicResource Template blue Command video}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="-0.2,0.517" Margin="304,13.5,0,13.5" d:LayoutOverrides="Width" HorizontalAlignment="Left"/>
-			<Button x:Name="Button_Play" Content="Play" Margin="156,13.5,0,13.5" Height="30" Template="{DynamicResource Template blue Command video}" Width="70" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
-			<Button x:Name="Button_Fast_Back" Content="fast Back" Height="30" Width="70" Template="{DynamicResource Template blue Command video}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="-2.467,0.65" Margin="82,13.5,466.5,13.5" HorizontalAlignment="Left"/>
-			<Button x:Name="Button_Next_Advence" Content="Next Advence" Margin="378,13.5,0,13.5" Height="30" Width="70" Template="{DynamicResource Template blue Command video}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="1.351,0.417" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
-			<Button x:Name="Button_Next_Back" Content="Next Back" Height="30" Template="{DynamicResource Template blue Command video}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" Margin="8,13.5,540.5,13.5" HorizontalAlignment="Left"/>
+			<Button x:Name="Button_Break" Margin="230,13.5,0,13.5" Height="30" Width="70" Template="{DynamicResource ButtonControlTemplate5}" HorizontalAlignment="Left" d:LayoutOverrides="Width" Content="Break"/>
+			<Button x:Name="Button_Fast_Advence" Content="Fast Advence" Height="30" Width="70" Template="{DynamicResource ButtonControlTemplate6}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="-0.2,0.517" Margin="304,13.5,0,13.5" d:LayoutOverrides="Width" HorizontalAlignment="Left"/>
+			<Button x:Name="Button_Play" Content="Play" Margin="156,13.5,0,13.5" Height="30" Template="{DynamicResource ButtonControlTemplate7}" Width="70" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
+			<Button x:Name="Button_Fast_Back" Content="fast Back" Height="30" Width="70" Template="{DynamicResource ButtonControlTemplate8}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="-2.467,0.65" Margin="82,13.5,466.5,13.5" HorizontalAlignment="Left"/>
+			<Button x:Name="Button_Next_Advence" Content="Next Advence" Margin="378,13.5,0,13.5" Height="30" Width="70" Template="{DynamicResource ButtonControlTemplate9}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="1.351,0.417" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
+			<Button x:Name="Button_Next_Back" Content="Next Back" Height="30" Template="{DynamicResource ButtonControlTemplate10}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" Margin="8,13.5,540.5,13.5" HorizontalAlignment="Left"/>
 			<Slider x:Name="Sound_On_Off" HorizontalAlignment="Right" Margin="0,13.5,8,8" Width="84.5"/>
-			<Button x:Name="Button_Sound"  Content="Sound" Margin="0,13.5,96.5,13.5" Height="30" Width="70" Template="{DynamicResource Template blue Command video}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="1.351,0.417" HorizontalAlignment="Right" d:LayoutOverrides="Width"/>
+			<Button x:Name="Button_Sound"  Content="Sound" Margin="0,13.5,96.5,13.5" Height="30" Width="70" Template="{DynamicResource ButtonControlTemplate11}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="1.351,0.417" HorizontalAlignment="Right" d:LayoutOverrides="Width"/>
 		</Grid>
 		<Grid x:Name="Time_position_screen" Height="67" Margin="150,0,0,0" VerticalAlignment="Top" Opacity="0.5">
 			<Grid.Background>
@@ -230,9 +377,7 @@
 				</LinearGradientBrush>
 			</Grid.Background>
 			<Slider x:Name="Position" Margin="80,20,8,12" Height="35"/>
-			<Button x:Name="Button_Full_Screen" Margin="0,20,0,17" Height="30" Template="{DynamicResource Template blue Command video}" Width="70" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" HorizontalAlignment="Left" d:LayoutOverrides="Width">
-				<Image Source="Images\Full%20Screen.png" />
-			</Button>
+			<Button x:Name="Button_Full_Screen" Margin="-0.5,20,0,17" Height="30" Template="{DynamicResource ButtonControlTemplate2}" Width="70" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" HorizontalAlignment="Left" d:LayoutOverrides="Width"/>
 		</Grid>
 		<Grid x:Name="Loop_random" HorizontalAlignment="Right" Margin="0,214,0,220" Width="63" Opacity="0.5" MaxHeight="150">
 			<Grid.Background>
@@ -241,8 +386,8 @@
 					<GradientStop Color="White" Offset="1"/>
 				</LinearGradientBrush>
 			</Grid.Background>
-			<Button x:Name="Button_Next_Advence_Copy" Content="Next Advence" Margin="-10,19.5,0,77" Height="30" Width="70" Template="{DynamicResource Template blue Command video}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="1.351,0.417" d:LayoutOverrides="Width"/>
-			<Button x:Name="Button_Next_Advence_Copy1" Content="Next Advence" Margin="-10,80,0,16.5" Height="30" Width="70" Template="{DynamicResource Template blue Command video}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="1.351,0.417" d:LayoutOverrides="Width"/>
+			<Button x:Name="Button_Loop" Content="Next Advence" Margin="-10,19.5,0,77" Height="30" Width="70" Template="{DynamicResource ButtonControlTemplate3}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="1.351,0.417" d:LayoutOverrides="Width"/>
+			<Button x:Name="Button_Random" Content="Next Advence" Margin="-10,80,0,16.5" Height="30" Width="70" Template="{DynamicResource ButtonControlTemplate4}" MaxWidth="70" MaxHeight="30" MinWidth="70" MinHeight="30" RenderTransformOrigin="1.351,0.417" d:LayoutOverrides="Width"/>
 		</Grid>
 	</Grid>
 </Window>
