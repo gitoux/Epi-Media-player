@@ -52,3 +52,5 @@ C:\Users\Adrien\Documents\GitHub\My-Work\Media Player Skin\Media Player Skin\obj
 C:\Users\Adrien\Documents\GitHub\My-Work\Media Player Skin\Media Player Skin\obj\x86\Debug\Media Player Skin.pdb
 C:\Users\Adrien\Documents\GitHub\My-Work\Media Player Skin\Media Player Skin\obj\x86\Debug\GenerateResource.read.0.tlog
 C:\Users\Adrien\Documents\GitHub\My-Work\Media Player Skin\Media Player Skin\obj\x86\Debug\GenerateResource.write.0.tlog
+C:\Users\Pica_d\Documents\GitHub\My-Work\Media Player Skin\Media Player Skin\obj\x86\Debug\Media Player Skin.exe
+C:\Users\Pica_d\Documents\GitHub\My-Work\Media Player Skin\Media Player Skin\obj\x86\Debug\Media Player Skin.pdb
