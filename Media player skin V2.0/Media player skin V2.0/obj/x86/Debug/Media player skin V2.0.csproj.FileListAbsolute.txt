@@ -15,3 +15,20 @@ C:\Users\Adrien\Documents\Visual Studio 2010\Projects\Media player skin V2.0\Med
 C:\Users\Adrien\Documents\Visual Studio 2010\Projects\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\App.baml
 C:\Users\Adrien\Documents\Visual Studio 2010\Projects\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.read.0.tlog
 C:\Users\Adrien\Documents\Visual Studio 2010\Projects\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.0.tlog
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\Media player skin V2.0.exe
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\Media player skin V2.0.pdb
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\MainWindow.baml
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player dictionary.baml
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\App.baml
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\App.g.cs
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0_MarkupCompile.cache
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.g.resources
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.Properties.Resources.resources
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.read.0.tlog
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.0.tlog
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.exe
+C:\Users\Adrien\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.pdb
