@@ -1,0 +1,11 @@
+﻿<Window x:Class="Media_player_skin_V2._0.LibraryControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LibraryControl" Height="369" Width="490" Loaded="Window_Loaded">
+    <Grid>
+        <ListBox Name="LibraryPath" Margin="0,0,105,12" />
+        <Button Name="AddLibrary" Content="Add Library" Margin="371,20,0,0" HorizontalAlignment="Left" Width="89" Click="AddLibrary_Click" Height="28" VerticalAlignment="Top" />
+        <Button Name="DeleteLibrary" Content="Delete Library" Margin="0,65,8,237" HorizontalAlignment="Right" Width="89" />
+        <Button Content="OK" HorizontalAlignment="Left" Margin="371,290,0,12" Name="OK" Width="89" Click="OK_Click" />
+    </Grid>
+</Window>
