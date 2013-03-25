@@ -44,7 +44,7 @@
 		</EventTrigger>
 	</Window.Triggers>
     <Grid x:Name="Menu_video_grid" Background="White" Margin="200,0,0,0">
-    	<Grid x:Name="Toolbar_menu" Background="#FF061C47" Height="110" VerticalAlignment="Bottom">
+    	<Grid x:Name="Toolbar_menu" Background="#FF133372" Height="110" VerticalAlignment="Bottom">
     		<Button x:Name="Play_button" HorizontalAlignment="Left" Height="45" MaxWidth="45" MaxHeight="45" Margin="163,0,0,15" MinWidth="45" MinHeight="45" Style="{DynamicResource TPlay_button}" Width="45" VerticalAlignment="Bottom" RenderTransformOrigin="0.889,0.578"/>
     		<Slider x:Name="Time_video" Height="26" Margin="8,5,8,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
     		<Button x:Name="Break_button" Height="45" MaxWidth="45" MaxHeight="45" Margin="212,0,0,15" MinWidth="45" MinHeight="45" Style="{DynamicResource TBreak_button}" VerticalAlignment="Bottom" RenderTransformOrigin="1.686,0.629" HorizontalAlignment="Left"/>
@@ -63,16 +63,16 @@
     		<Button x:Name="Menu_open_button" MaxWidth="80" MaxHeight="40" Margin="376.182,0,327.818,15" MinWidth="80" MinHeight="40" Style="{DynamicResource TMenu_open_button}" RenderTransformOrigin="1.6,0.686" Height="40" VerticalAlignment="Bottom" Opacity="0" d:LayoutOverrides="GridBox" Visibility="Hidden"/>
     	</Grid>
     	<Grid x:Name="Playlist_menu_toolbar" HorizontalAlignment="Left" Margin="-201,0,0,0" Width="197" Background="White">
-    		<Grid x:Name="Toolbar_playlist_menu" Height="90" VerticalAlignment="Bottom" Background="#FF061C47" Margin="0.5,0,0,205">
+    		<Grid x:Name="Toolbar_playlist_menu" Height="90" VerticalAlignment="Bottom" Background="#FF133372" Margin="0.5,0,0,205">
     			<Button x:Name="Update_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,8,153.5,47" MinWidth="35" MinHeight="35" Style="{DynamicResource TUpdate_button}" RenderTransformOrigin="1.6,0.686" Width="35"/>
     			<Button x:Name="Add_library_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="47,8,0,47" MinWidth="35" MinHeight="35" Style="{DynamicResource TAdd_lib_button}" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Left" Width="39"/>
     			<Button x:Name="Add_playlist_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,47,153.5,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TAdd_playlist_button}" RenderTransformOrigin="1.6,0.686"/>
     			<Button x:Name="Delete_playlist_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="105,47,56.5,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TDelete_playlist_button}" RenderTransformOrigin="1.6,0.686"/>
     		</Grid>
-    		<ListBox x:Name="Menu_listbox" Margin="0,0,0,299" Background="#FF061C47"/>
-    		<ListBox x:Name="Playlist_listbox" Height="201" Margin="0" VerticalAlignment="Bottom" Background="#FF061C47"/>
+    		<ListBox x:Name="Menu_listbox" Margin="0,0,0,299" Background="#FF133372"/>
+    		<ListBox x:Name="Playlist_listbox" Height="201" Margin="0" VerticalAlignment="Bottom" Background="#FF133372"/>
     	</Grid>
-    	<Grid x:Name="Video_Grid" Margin="0,0,0,114" Background="#FF061C47"/>
+    	<Grid x:Name="Video_Grid" Margin="0,0,0,114" Background="#FF133372"/>
         
     </Grid>
 </Window>
