@@ -1,3 +1,0 @@
-Windows Media Player V2
-
-Mais elle est affreuse la v1..........
