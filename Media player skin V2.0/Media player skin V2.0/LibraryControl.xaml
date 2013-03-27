@@ -1,12 +1,22 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sotc="clr-namespace:Media_player_skin_V2._0"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Media_player_skin_V2._0.LibraryControl"
         Title="LibraryControl" Height="369" Width="490" Loaded="Window_Loaded">
+    <Window.Resources>
+        <HierarchicalDataTemplate DataType="{x:Type sotc:directoryMedia}">
+            <TextBlock Text="{Binding Path=dir}" Foreground="White"/>
+        </HierarchicalDataTemplate>
+    </Window.Resources>
     <Grid Background="Black">
-        <ListBox x:Name="LibraryPath" Margin="0,0,105,12" Background="Black" Foreground="White" />
+        <TreeView Name="LibraryPath" Margin="0,0,105,12" Background="Black" Foreground="White">
+            <TreeViewItem Header="Pictures" x:Name="PictureTree" x:FieldModifier="private" Foreground="White"/>
+            <TreeViewItem Header="Video" x:Name="VideoTree" x:FieldModifier="private" Foreground="White"/>
+            <TreeViewItem Header="Music" x:Name="MusicTree" x:FieldModifier="private" Foreground="White"/>
+        </TreeView>
         <Button x:Name="AddLibrary" Content="Add Library" Click="AddLibrary_Click" Height="35" MaxWidth="35" MaxHeight="35" Margin="380,8,59,288" MinWidth="35" MinHeight="35" Style="{DynamicResource TAdd_lib_button}" RenderTransformOrigin="1.6,0.686"/>
-        <Button x:Name="DeleteLibrary" Content="Delete Library" MaxWidth="35" MaxHeight="35" Margin="380,43,59,253" MinWidth="35" MinHeight="35" Style="{DynamicResource TDelete_lib_button}" RenderTransformOrigin="1.6,0.686"/>
+        <Button x:Name="DeleteLibrary" Content="Delete Library" Click="DeleteLibrary_Click" MaxWidth="35" MaxHeight="35" Margin="380,43,59,253" MinWidth="35" MinHeight="35" Style="{DynamicResource TDelete_lib_button}" RenderTransformOrigin="1.6,0.686"/>
         <Button x:Name="OK" Click="OK_Click" MaxHeight="35" Margin="380,284,59,12" MinWidth="35" MinHeight="35" Style="{DynamicResource TOk_button}" RenderTransformOrigin="1.6,0.686"/>
     </Grid>
 </Window>

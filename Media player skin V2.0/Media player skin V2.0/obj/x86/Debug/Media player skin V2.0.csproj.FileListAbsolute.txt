@@ -89,3 +89,7 @@ C:\Users\Adrien\Desktop\Media player skin V2.0\Media player skin V2.0\obj\x86\De
 C:\Users\Adrien\Desktop\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Adrien\Desktop\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.exe
 C:\Users\Adrien\Desktop\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.pdb
+C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\LibraryControl.baml
+C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\LibraryControl.g.cs
+C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0_MarkupCompile.lref

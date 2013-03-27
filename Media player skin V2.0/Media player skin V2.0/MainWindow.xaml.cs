@@ -29,7 +29,7 @@ namespace Media_player_skin_V2._0
         private DispatcherTimer timer;
         private bool isDragging = false;
         private Thickness marginSave;
-        private ObservableCollection<string> dir = new ObservableCollection<string>();
+        private ObservableCollection<DirMedia> dir = new ObservableCollection<DirMedia>();
         private LibraryControl libraryControlWindow = new LibraryControl();
 
         public MainWindow()
@@ -93,7 +93,7 @@ namespace Media_player_skin_V2._0
         {
             MediaPlayer.Volume = (double)Sound_settings.Value;
         }
-        
+
         private void mediaPlayer_ButtonFullScreen(object sender, RoutedEventArgs e)
         {
             if (!fullScreen)
@@ -125,7 +125,7 @@ namespace Media_player_skin_V2._0
             }
             fullScreen = !fullScreen;
         }
-        
+
         private void timer_Tick(object sender, EventArgs e)
         {
             if (!isDragging)
@@ -152,8 +152,13 @@ namespace Media_player_skin_V2._0
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dir.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListChanged);
-            this.libraryControlWindow.listImgDir = dir;   
+            dir.Add(new DirMedia("Pictures"));
+            dir.Add(new DirMedia("Video"));
+            dir.Add(new DirMedia("Music"));
+            dir[0].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListPictureChanged);
+            dir[1].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListVideoChanged);
+            dir[2].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListMusicChanged);
+            this.libraryControlWindow.listDir = dir;
             ICollectionView view = CollectionViewSource.GetDefaultView(listMedia);
             view.GroupDescriptions.Add(new PropertyGroupDescription("type"));
             view.SortDescriptions.Add(new SortDescription("type", ListSortDirection.Ascending));
@@ -163,15 +168,17 @@ namespace Media_player_skin_V2._0
 
         private void Window_Closed(object sender, EventArgs e)
         {
+            this.libraryControlWindow.closeWindow = true;
             this.libraryControlWindow.Close();
         }
 
         private void MenuBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Media select = (Media)this.Menu_listbox.SelectedItem;
+            Media select = this.Menu_listbox.SelectedItem as Media;
             if (select != null)
             {
-                //MessageBox.Show(select.name);
+                //MediaPlayer.Stop();
+                MessageBox.Show(select.name);
                 currentMedia = select;
                 MediaPlayer.Source = new Uri(currentMedia.path);
                 MediaPlayer.Play();
