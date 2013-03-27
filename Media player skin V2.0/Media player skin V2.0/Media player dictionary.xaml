@@ -45,8 +45,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -84,8 +84,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -123,8 +123,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -162,8 +162,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -201,8 +201,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -240,8 +240,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -279,8 +279,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -318,8 +318,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -357,8 +357,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -396,8 +396,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -435,8 +435,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -474,8 +474,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -513,8 +513,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid Width="Auto">
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -552,8 +552,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid Width="Auto">
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -591,8 +591,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid>
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -625,13 +625,13 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style x:Key="TAdd_lib_button" TargetType="{x:Type Button}">
+	<Style x:Key="TGestion_lib_button" TargetType="{x:Type Button}">
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid Margin="0,0,-107,0">
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -669,8 +669,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid Margin="0,0,-49,0">
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -708,8 +708,8 @@
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
 					<Grid Margin="0,0,-49,0">
-						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black"/>
-						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
 									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
@@ -719,6 +719,123 @@
 						</Rectangle>
 						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="" Width="68"/>
 						<TextBlock Margin="18,2,10,2" TextWrapping="Wrap" FontWeight="Bold" FontSize="10.667" RenderTransformOrigin="0.442,0.586"><Run Language="fr-fr" Text="Supprimer "/><LineBreak/><Run Language="fr-fr" Text="Playlist"/></TextBlock>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsFocused" Value="True"/>
+						<Trigger Property="IsDefaulted" Value="True"/>
+						<Trigger Property="IsMouseOver" Value="True"/>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="Fill" TargetName="Border_1" Value="Black"/>
+							<Setter Property="Fill" TargetName="Border_2">
+								<Setter.Value>
+									<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
+										<GradientStop Color="White" Offset="0.217"/>
+										<GradientStop Color="White" Offset="0.775"/>
+									</LinearGradientBrush>
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Opacity" TargetName="Border_2" Value="0.75"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False"/>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="TAdd_lib_button" TargetType="{x:Type Button}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid Margin="0,0,-49,0">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
+							<Rectangle.Fill>
+								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
+									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
+									<GradientStop Color="White" Offset="0.775"/>
+								</LinearGradientBrush>
+							</Rectangle.Fill>
+						</Rectangle>
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="" Width="68"/>
+						<TextBlock Margin="23,2,8,2" TextWrapping="Wrap" FontWeight="Bold" FontSize="10.667" RenderTransformOrigin="0.442,0.586"><Run Language="fr-fr" Text="Ajouter "/><LineBreak/><Run Language="fr-fr" Text="Librairie"/><LineBreak/><Run Language="fr-fr"/></TextBlock>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsFocused" Value="True"/>
+						<Trigger Property="IsDefaulted" Value="True"/>
+						<Trigger Property="IsMouseOver" Value="True"/>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="Fill" TargetName="Border_1" Value="Black"/>
+							<Setter Property="Fill" TargetName="Border_2">
+								<Setter.Value>
+									<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
+										<GradientStop Color="White" Offset="0.217"/>
+										<GradientStop Color="White" Offset="0.775"/>
+									</LinearGradientBrush>
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Opacity" TargetName="Border_2" Value="0.75"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False"/>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="TDelete_lib_button" TargetType="{x:Type Button}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid Margin="0,0,-49,0">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
+							<Rectangle.Fill>
+								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
+									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
+									<GradientStop Color="White" Offset="0.775"/>
+								</LinearGradientBrush>
+							</Rectangle.Fill>
+						</Rectangle>
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="" Width="68"/>
+						<TextBlock Margin="18,3,0,3" TextWrapping="Wrap" FontWeight="Bold" FontSize="10.667" RenderTransformOrigin="0.442,0.586"><Run Language="fr-fr" Text="Supprimer Librairie"/><LineBreak/><Run Language="fr-fr"/></TextBlock>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsFocused" Value="True"/>
+						<Trigger Property="IsDefaulted" Value="True"/>
+						<Trigger Property="IsMouseOver" Value="True"/>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="Fill" TargetName="Border_1" Value="Black"/>
+							<Setter Property="Fill" TargetName="Border_2">
+								<Setter.Value>
+									<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
+										<GradientStop Color="White" Offset="0.217"/>
+										<GradientStop Color="White" Offset="0.775"/>
+									</LinearGradientBrush>
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Opacity" TargetName="Border_2" Value="0.75"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False"/>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="TOk_button" TargetType="{x:Type Button}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid Margin="0,0,-49,0">
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
+							<Rectangle.Fill>
+								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
+									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
+									<GradientStop Color="White" Offset="0.775"/>
+								</LinearGradientBrush>
+							</Rectangle.Fill>
+						</Rectangle>
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="" Width="68"/>
+						<TextBlock Margin="34,9,27,4.52" TextWrapping="Wrap" FontWeight="Bold" FontSize="10.667" RenderTransformOrigin="0.304,0.801"><Run Language="fr-fr" Text="OK"/></TextBlock>
 					</Grid>
 					<ControlTemplate.Triggers>
 						<Trigger Property="IsFocused" Value="True"/>

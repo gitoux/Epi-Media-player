@@ -8,8 +8,8 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <Expander Header="{Binding Name}" IsExpanded="False">
-                            <ItemsPresenter />
+                        <Expander Header="{Binding Name}" IsExpanded="False" Background="Black" Foreground="White">
+                            <ItemsPresenter/>
                         </Expander>
                     </ControlTemplate>
                 </Setter.Value>
@@ -57,25 +57,25 @@
     </Window.Triggers>
     <Grid x:Name="Global_grid" Background="White" Margin="0">
         <Grid x:Name="Playlist_menu_toolbar" HorizontalAlignment="Left" Width="197" Background="White">
-            <Grid x:Name="Toolbar_playlist_menu" Height="90" VerticalAlignment="Bottom" Background="#FF133372" Margin="0.5,0,0,205">
+            <Grid x:Name="Toolbar_playlist_menu" Height="90" VerticalAlignment="Bottom" Background="Black" Margin="0.5,0,0,205">
                 <Button x:Name="Update_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,8,153.5,47" MinWidth="35" MinHeight="35" Style="{DynamicResource TUpdate_button}" RenderTransformOrigin="1.6,0.686" Width="35" Click="Refresh_Click"/>
-                <Button x:Name="Add_library_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="47,8,0,47" MinWidth="35" MinHeight="35" Style="{DynamicResource TAdd_lib_button}" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Left" Width="39" Click="AddLibrary_Click"/>
+                <Button x:Name="Add_library_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="47,8,0,47" MinWidth="35" MinHeight="35" Style="{DynamicResource TGestion_lib_button}" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Left" Width="39" Click="AddLibrary_Click"/>
                 <Button x:Name="Add_playlist_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,47,153.5,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TAdd_playlist_button}" RenderTransformOrigin="1.6,0.686"/>
                 <Button x:Name="Delete_playlist_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="105,47,56.5,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TDelete_playlist_button}" RenderTransformOrigin="1.6,0.686"/>
             </Grid>
-            <ListBox x:Name="Menu_listbox" Margin="0,0,0,299" Background="#FF133372" MouseDoubleClick="MenuBox_MouseDoubleClick">
-                <ListBox.GroupStyle>
+            <ListBox x:Name="Menu_listbox" Margin="0,0,0,299" Background="Black" MouseDoubleClick="MenuBox_MouseDoubleClick" Foreground="White"> 
+				<ListBox.GroupStyle>
                     <GroupStyle ContainerStyle="{StaticResource ContainerStyle}">
                     </GroupStyle>
                 </ListBox.GroupStyle>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding name}">
+                        <TextBlock Text="{Binding name}" Foreground="White">
                         </TextBlock>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <ListBox x:Name="Playlist_listbox" Height="201" Margin="0" VerticalAlignment="Bottom" Background="#FF133372"/>
+            <ListBox x:Name="Playlist_listbox" Height="201" Margin="0" VerticalAlignment="Bottom" Background="Black"/>
         </Grid>
         <Grid x:Name="Menu_video_grid" Margin="201,0,0,0" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
@@ -86,7 +86,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Grid.RenderTransform>
-            <Grid x:Name="Toolbar_menu" Background="#FF133372" Height="110" VerticalAlignment="Bottom">
+            <Grid x:Name="Toolbar_menu" Background="Black" Height="110" VerticalAlignment="Bottom">
                 <Button x:Name="Play_button" HorizontalAlignment="Left" Height="45" MaxWidth="45" MaxHeight="45" Margin="163,0,0,15" MinWidth="45" MinHeight="45" Style="{DynamicResource TPlay_button}" Width="45" VerticalAlignment="Bottom" RenderTransformOrigin="0.889,0.578" Click="buttonPlayClick"/>
                 <Slider x:Name="Time_video" Height="26" Margin="8,5,8,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Thumb.DragStarted="Time_video_DragStarted" Thumb.DragCompleted="Time_video_DragCompleted"/>
                 <Button x:Name="Break_button" Height="45" MaxWidth="45" MaxHeight="45" Margin="212,0,0,15" MinWidth="45" MinHeight="45" Style="{DynamicResource TBreak_button}" VerticalAlignment="Bottom" RenderTransformOrigin="1.686,0.629" HorizontalAlignment="Left" Click="buttonPauseClick"/>
@@ -104,7 +104,7 @@
                 <Button x:Name="Menu_close_button" MaxWidth="80" MaxHeight="40" Margin="376.182,0,327.818,15" MinWidth="80" MinHeight="40" Style="{DynamicResource TMenu_close_button}" RenderTransformOrigin="1.6,0.686" Height="40" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox"/>
                 <Button x:Name="Menu_open_button" MaxWidth="80" MaxHeight="40" Margin="376.182,0,327.818,15" MinWidth="80" MinHeight="40" Style="{DynamicResource TMenu_open_button}" RenderTransformOrigin="1.6,0.686" Height="40" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Visibility="Hidden"/>
             </Grid>
-            <Grid x:Name="Video_Grid" Margin="0,0,0,114" Background="#FF133372">
+            <Grid x:Name="Video_Grid" Margin="0,0,0,114" Background="Black">
                 <MediaElement Name="MediaPlayer" LoadedBehavior="Manual"
                       Position="00:00:00" MediaOpened="Element_MediaOpened" MediaEnded="Element_MediaEnded" Grid.Column="1"/>
             </Grid>
