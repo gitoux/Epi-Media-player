@@ -75,6 +75,7 @@ namespace Media_player_skin_V2._0
         }
         private void buttonStopClick(object sender, RoutedEventArgs e)
         {
+            MediaPlayer.SpeedRatio = 1.0;
             MediaPlayer.Stop();
             MediaPlayer.Close();
             Time_video.Value = 0.0;
@@ -86,7 +87,10 @@ namespace Media_player_skin_V2._0
         }
         private void buttonForwardClick(object sender, RoutedEventArgs e)
         {
-            MediaPlayer.SpeedRatio = 2.0;
+            //MediaPlayer.
+            if (MediaPlayer.SpeedRatio < 24)
+                MediaPlayer.SpeedRatio += 2.0;
+            //MessageBox.Show(""+MediaPlayer.SpeedRatio);
             MediaPlayer.Play();
         }
         private void ChangeMediaVolume(object sender, RoutedPropertyChangedEventArgs<double> args)
@@ -98,9 +102,6 @@ namespace Media_player_skin_V2._0
         {
             if (!fullScreen)
             {
-                //Video_Grid.Children.Remove(MediaPlayer);
-                //Menu_video_grid.Children.Remove(Video_Grid);
-                //Global_grid.Children.Remove(Menu_video_grid);
                 this.Background = new SolidColorBrush(Colors.Black);
                 this.WindowStyle = WindowStyle.None;
                 this.WindowState = WindowState.Maximized;
@@ -115,8 +116,6 @@ namespace Media_player_skin_V2._0
             }
             else
             {
-                //this.Content = Global_grid;
-                //Global_grid.Children.Add(Menu_video_grid);
                 this.Background = new SolidColorBrush(Colors.White);
                 this.WindowStyle = WindowStyle.SingleBorderWindow;
                 this.WindowState = WindowState.Normal;
@@ -152,6 +151,7 @@ namespace Media_player_skin_V2._0
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Sound_settings.ValueChanged += ChangeMediaVolume;
             dir.Add(new DirMedia("Pictures"));
             dir.Add(new DirMedia("Video"));
             dir.Add(new DirMedia("Music"));
@@ -177,12 +177,23 @@ namespace Media_player_skin_V2._0
             Media select = this.Menu_listbox.SelectedItem as Media;
             if (select != null)
             {
-                //MediaPlayer.Stop();
-                MessageBox.Show(select.name);
+                MediaPlayer.Stop();
+                MediaPlayer.SpeedRatio = 1.0;
+                //MessageBox.Show(select.name);
                 currentMedia = select;
                 MediaPlayer.Source = new Uri(currentMedia.path);
                 MediaPlayer.Play();
             }
+        }
+
+        private void Sound_off_Click(object sender, RoutedEventArgs e)
+        {
+            MediaPlayer.IsMuted = true;
+        }
+
+        private void Sound_on_Click(object sender, RoutedEventArgs e)
+        {
+            MediaPlayer.IsMuted = false;
         }
     }
 }
