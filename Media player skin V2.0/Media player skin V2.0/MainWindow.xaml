@@ -57,13 +57,7 @@
     </Window.Triggers>
     <Grid x:Name="Global_grid" Background="White" Margin="0">
         <Grid x:Name="Playlist_menu_toolbar" HorizontalAlignment="Left" Width="197" Background="White">
-            <Grid x:Name="Toolbar_playlist_menu" Height="90" VerticalAlignment="Bottom" Background="Black" Margin="0.5,0,0,205">
-                <Button x:Name="Update_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,8,153.5,47" MinWidth="35" MinHeight="35" Style="{DynamicResource TUpdate_button}" RenderTransformOrigin="1.6,0.686" Width="35" Click="Refresh_Click"/>
-                <Button x:Name="Add_library_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="47,8,0,47" MinWidth="35" MinHeight="35" Style="{DynamicResource TGestion_lib_button}" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Left" Width="39" Click="AddLibrary_Click"/>
-                <Button x:Name="Add_playlist_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,47,153.5,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TAdd_playlist_button}" RenderTransformOrigin="1.6,0.686"/>
-                <Button x:Name="Delete_playlist_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="105,47,56.5,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TDelete_playlist_button}" RenderTransformOrigin="1.6,0.686"/>
-            </Grid>
-            <ListBox x:Name="Menu_listbox" Margin="0,0,0,299" Background="Black" MouseDoubleClick="MenuBox_MouseDoubleClick" Foreground="White"> 
+            <ListBox x:Name="Menu_listbox" Margin="-0.5,62.5,0.5,314.5" Background="Black" MouseDoubleClick="MenuBox_MouseDoubleClick" Foreground="White"> 
 				<ListBox.GroupStyle>
                     <GroupStyle ContainerStyle="{StaticResource ContainerStyle}">
                     </GroupStyle>
@@ -75,7 +69,17 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <ListBox x:Name="Playlist_listbox" Height="201" Margin="0" VerticalAlignment="Bottom" Background="Black"/>
+            <ListBox x:Name="Playlist_listbox" Margin="0.5,0,-0.5,94" Background="Black" Height="216.5" VerticalAlignment="Bottom"/>
+            <Grid x:Name="Toolbar_library" Height="58" VerticalAlignment="Top" Background="Black" Margin="0.5,0.5,0,0">
+            	<Button x:Name="Update_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,8,153.5,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TUpdate_button}" RenderTransformOrigin="1.6,0.686" Width="35" Click="Refresh_Click" d:LayoutOverrides="VerticalAlignment"/>
+            	<Button x:Name="Add_library_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="47,8,0,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TGestion_lib_button}" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Left" Width="39" Click="AddLibrary_Click" d:LayoutOverrides="VerticalAlignment"/>
+            </Grid>
+            <Grid x:Name="Toolbar_playlist" Height="90" VerticalAlignment="Bottom" Background="Black" Margin="0,0,0.5,0">
+            	<Button x:Name="Add_playlist_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,47,153.5,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TAdd_playlist_button}" RenderTransformOrigin="1.6,0.686"/>
+            	<Button x:Name="Delete_playlist_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="105,47,56.5,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TDelete_playlist_button}" RenderTransformOrigin="1.6,0.686"/>
+            	<Button x:Name="Add_media_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,8,153.5,47" MinWidth="35" MinHeight="35" Style="{DynamicResource TAdd_media_button}" RenderTransformOrigin="1.6,0.686"/>
+            	<Button x:Name="Delete_media_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="105,8,56.5,47" MinWidth="35" MinHeight="35" Style="{DynamicResource TDelete_media_button}" RenderTransformOrigin="1.6,0.686"/>
+            </Grid>
         </Grid>
         <Grid x:Name="Menu_video_grid" Margin="201,0,0,0" RenderTransformOrigin="0.5,0.5">
             <Grid.RenderTransform>
