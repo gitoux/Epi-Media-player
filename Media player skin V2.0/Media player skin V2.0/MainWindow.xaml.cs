@@ -16,6 +16,10 @@ using System.Collections.ObjectModel;
 using System.Windows.Controls.Primitives;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Xml.Serialization;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml;
 
 namespace Media_player_skin_V2._0
 {
@@ -31,6 +35,8 @@ namespace Media_player_skin_V2._0
         private Thickness marginSave;
         private ObservableCollection<DirMedia> dir = new ObservableCollection<DirMedia>();
         private LibraryControl libraryControlWindow = new LibraryControl();
+        public ObservableCollection<Playlist> pl;
+        public TreeViewItem tmpNode;
 
         public MainWindow()
         {
@@ -38,6 +44,27 @@ namespace Media_player_skin_V2._0
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(200);
             timer.Tick += new EventHandler(timer_Tick);
+        }
+
+        private void plMouseRightClick(object sender, EventArgs e)
+        {
+            if (treePl.SelectedItem != null)
+            {
+                tmpNode = (TreeViewItem)treePl.SelectedItem;
+                for (int i = 0; i < pl.Count; i++)
+                {
+                    if (pl[i].Name == tmpNode.Header.ToString())
+                    {
+                        rename input = new rename();
+                        input.tmpNode = tmpNode;
+                        input.tmpPl = pl[i];
+                        input.selectedIndex = i;
+                        input.tmpOb = pl;
+                        input.Show();
+                        break;
+                    }
+                }
+            }
         }
 
         private void Element_MediaOpened(object sender, EventArgs e)
@@ -164,6 +191,54 @@ namespace Media_player_skin_V2._0
             view.SortDescriptions.Add(new SortDescription("type", ListSortDirection.Ascending));
             view.SortDescriptions.Add(new SortDescription("name", ListSortDirection.Ascending));
             Menu_listbox.ItemsSource = view;
+
+            using (var fs = new FileStream("playlist.xml", FileMode.OpenOrCreate))
+            {
+                try
+                {
+                    XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
+                    if (fs.Length > 0)
+                        pl = (ObservableCollection<Playlist>)xml.Deserialize(fs);
+                    else
+                        pl = new ObservableCollection<Playlist>();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The file for playlist has been corrupted. New playlist file has been created");
+                    pl = new ObservableCollection<Playlist>();
+                }
+            }
+            Stream Istream = File.Open("playlistNum", FileMode.OpenOrCreate);
+            BinaryFormatter IFormatter = new BinaryFormatter();
+            if (Istream.Length > 0 && pl.Count > 0)
+                plIndex = (int)IFormatter.Deserialize(Istream);
+            else
+                plIndex = 1;
+            if (pl.Count == 0)
+            {
+                plIndex = 1;
+                pl.Add(new Playlist("Playlist" + plIndex));
+                plIndex++;
+                using (var fs = new FileStream("playlist.xml", FileMode.Create))
+                {
+                    XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
+                    xml.Serialize(fs, pl);
+                }
+                IFormatter.Serialize(Istream, plIndex);
+            }
+            Istream.Close();
+            for (int i = 0; i < pl.Count(); i++)
+            {
+                TreeViewItem tmp = new TreeViewItem();
+                tmp.Header = pl[i].Name;
+                for (int j = 0; j < pl[i].List.Count; j++)
+                {
+                    TreeViewItem media = new TreeViewItem();
+                    media.Header = pl[i].List[j].name;
+                    tmp.Items.Add(media);
+                }
+                treePl.Items.Add(tmp);
+            }
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -194,6 +269,132 @@ namespace Media_player_skin_V2._0
         private void Sound_on_Click(object sender, RoutedEventArgs e)
         {
             MediaPlayer.IsMuted = false;
+        }
+
+        private void Add_media_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Menu_listbox.SelectedItem == null)
+            {
+                MessageBox.Show("Selectionnez un fichier");
+                return;
+            }
+            if (treePl.SelectedItem == null)
+            {
+                MessageBox.Show("Selectionnez une playlist");
+                return;
+            }
+            else
+            {
+                Media tmpMedia = (Media)Menu_listbox.SelectedItem;
+                TreeViewItem tmpItem = (TreeViewItem)treePl.SelectedItem;
+                if (tmpItem.Parent.GetType().ToString() == "System.Windows.Controls.TreeView")
+                {
+                    Playlist tmpPl;
+                    for (int i = 0; i < pl.Count; i++)
+                        if (pl[i].Name == tmpItem.Header.ToString())
+                        {
+                            tmpPl = pl[i];
+                            tmpPl.List.Add(tmpMedia);
+                            TreeViewItem newSong = new TreeViewItem();
+                            newSong.Header = tmpMedia.name;
+                            tmpItem.Items.Add(newSong);
+                            using (var fs = new FileStream("playlist.xml", FileMode.OpenOrCreate))
+                            {
+                                XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
+                                xml.Serialize(fs, pl);
+                            }
+                            break;
+                        }
+                }
+                else
+                    MessageBox.Show("Selectionnez une playlist");
+            }
+        }
+
+        private void Delete_media_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (treePl.SelectedItem == null)
+            {
+                MessageBox.Show("Selectionnez un media");
+                return;
+            }
+            else
+            {
+                TreeViewItem tmpMedia = (TreeViewItem)treePl.SelectedItem;
+                if (tmpMedia.Items.Count == 0)
+                {
+                    TreeViewItem tmpPl = tmpMedia.Parent as TreeViewItem;
+                    for (int i = 0; i < pl.Count; i++)
+                        if (pl[i].Name == tmpPl.Header.ToString())
+                        {
+                            Playlist curPlaylist;
+                            curPlaylist = pl[i];
+                            for (int j = 0; j < curPlaylist.List.Count; j++)
+                                if (curPlaylist.List[j].name == tmpMedia.Header.ToString())
+                                {
+                                    curPlaylist.List.RemoveAt(j);
+                                    tmpPl.Items.Remove(tmpMedia);
+                                    using (var fs = new FileStream("playlist.xml", FileMode.Create))
+                                    {
+                                        XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
+                                        xml.Serialize(fs, pl);
+                                    }
+                                    break;
+                                }
+                            break;
+                        }
+                }
+                else
+                    MessageBox.Show("Select a song please");
+            }
+        }
+
+        private void Add_playlist_button_Click(object sender, RoutedEventArgs e)
+        {
+            pl.Add(new Playlist("Playlist" + plIndex));
+            TreeViewItem Pltmp = new TreeViewItem();
+            Pltmp.Header = "Playlist" + plIndex;
+            plIndex++;
+
+            using (var fs = new FileStream("playlist.xml", FileMode.OpenOrCreate))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
+                xml.Serialize(fs, pl);
+            }
+
+            Stream Istream = File.Open("playlistNum", FileMode.OpenOrCreate);
+            BinaryFormatter IFormatter = new BinaryFormatter();
+            IFormatter.Serialize(Istream, plIndex);
+            Istream.Close();
+            treePl.Items.Add(Pltmp);
+        }
+
+        private void Delete_playlist_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (treePl.SelectedItem == null)
+            {
+                MessageBox.Show("Selectionnez une Playlist");
+                return;
+            }
+            else
+            {
+                tmpNode = (TreeViewItem)treePl.SelectedItem;
+                for (int i = 0; i < pl.Count; i++)
+                {
+                    if (pl[i].Name == tmpNode.Header.ToString())
+                    {
+                        pl.Remove(pl[i]);
+                        treePl.Items.Remove(tmpNode);
+                        using (var fs = new FileStream("playlist.xml", FileMode.Create))
+                        {
+                            XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
+                            xml.Serialize(fs, pl);
+                        }
+                        return;
+                    }
+                }
+                MessageBox.Show("Selectionnez une Playlist");
+            }
         }
     }
 }

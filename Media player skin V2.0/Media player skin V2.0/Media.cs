@@ -9,7 +9,24 @@ using System.IO;
 
 namespace Media_player_skin_V2._0
 {
-    class Media
+    [Serializable]
+    public class Playlist
+    {
+        public string Name { get; set; }
+        public ObservableCollection<Media> List { get; set; }
+        public Playlist(string _name)
+        {
+            Name = _name;
+            List = new ObservableCollection<Media>();
+        }
+
+        public Playlist()
+        {
+        }
+    }
+
+    [Serializable]
+    public class Media
     {
         public string path { get; set; }
         public string name { get; set; }
@@ -21,7 +38,12 @@ namespace Media_player_skin_V2._0
             type = newType;
             name = System.IO.Path.GetFileName(path);
         }
+        
+        public Media()
+        {
+        }
     }
+
     public partial class MainWindow : Window
     {
         private string[] extensionImg = { "*.jpg", "*.bmp", "*.png" };
@@ -29,6 +51,7 @@ namespace Media_player_skin_V2._0
         private string[] extensionMusic = { "*.mp3", "*.ogg" };
         private ObservableCollection<Media> listMedia = new ObservableCollection<Media>();
         private Media currentMedia;
+        int plIndex;
 
         private void DirListPictureChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
