@@ -28,9 +28,7 @@ C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player ski
 C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0_MarkupCompile.cache
 C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.g.resources
 C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.Properties.Resources.resources
-C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.read.0.tlog
 C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.0.tlog
 C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Pica_d\Documents\C#\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.exe
 C:\Users\Pica_d\Documents\C#\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.pdb
@@ -156,3 +154,4 @@ C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player ski
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.0.tlog
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.rename.resources

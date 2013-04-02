@@ -4,8 +4,33 @@
     <Name>test</Name>
     <List>
       <Media>
-        <path>C:\Users\Tchiko\Videos\Suit Tie (Official Lyric Video).mp4</path>
-        <name>Suit Tie (Official Lyric Video).mp4</name>
+        <path>C:\Users\Pica_d\Videos\GTAVTrailer.wmv</path>
+        <name>GTAVTrailer.wmv</name>
+        <type>Video</type>
+      </Media>
+      <Media>
+        <path>C:\Users\Pica_d\Videos\[HIMYM - S05] Episode 17.avi</path>
+        <name>[HIMYM - S05] Episode 17.avi</name>
+        <type>Video</type>
+      </Media>
+      <Media>
+        <path>C:\Users\Pica_d\Videos\Sample Videos\Wildlife.wmv</path>
+        <name>Wildlife.wmv</name>
+        <type>Video</type>
+      </Media>
+    </List>
+  </Playlist>
+  <Playlist>
+    <Name>Playlist3</Name>
+    <List>
+      <Media>
+        <path>E:\Download\ThTr02072\The Transporter (2002) 720p by johnchen [MKV Corp].mkv</path>
+        <name>The Transporter (2002) 720p by johnchen [MKV Corp].mkv</name>
+        <type>Video</type>
+      </Media>
+      <Media>
+        <path>E:\Download\LaCA93SE10072\La Classe Américaine (1993)[Special Edition 2010] 720p by Solon8 [MKV Corp].mkv</path>
+        <name>La Classe Américaine (1993)[Special Edition 2010] 720p by Solon8 [MKV Corp].mkv</name>
         <type>Video</type>
       </Media>
     </List>

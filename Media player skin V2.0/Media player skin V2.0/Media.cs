@@ -50,7 +50,9 @@ namespace Media_player_skin_V2._0
         private string[] extensionVideo = { "*.mp4", "*.avi", "*.wmv", "*.mkv" };
         private string[] extensionMusic = { "*.mp3", "*.ogg" };
         private ObservableCollection<Media> listMedia = new ObservableCollection<Media>();
-        private Media currentMedia;
+        private Media currentMedia = null;
+        private Playlist currentPlaylist = null;
+        private int MediaNum = 0;
         int plIndex;
 
         private void DirListPictureChanged(object sender, NotifyCollectionChangedEventArgs e)

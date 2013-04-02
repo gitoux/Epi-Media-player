@@ -32,6 +32,7 @@ namespace Media_player_skin_V2._0
         private double currentPosition = 0.0;
         private DispatcherTimer timer;
         private bool isDragging = false;
+        private bool Loop = false;
         private Thickness marginSave;
         private ObservableCollection<DirMedia> dir = new ObservableCollection<DirMedia>();
         private LibraryControl libraryControlWindow = new LibraryControl();
@@ -71,6 +72,18 @@ namespace Media_player_skin_V2._0
             MediaPlayer.Close();
             Time_video.Value = 0.0;
             MediaPlayer.Position = TimeSpan.FromSeconds(Time_video.Value);
+            if (currentPlaylist != null)
+            {
+                if (Loop == true && MediaNum >= currentPlaylist.List.Count)
+                    MediaNum = 0;
+                if (MediaNum + 1 < currentPlaylist.List.Count)
+                {
+                    MediaNum += 1;
+                    currentMedia = currentPlaylist.List[MediaNum];
+                    MediaPlayer.Source = new Uri(currentMedia.path);
+                    MediaPlayer.Play();
+                }
+            }
         }
 
         private void buttonPlayClick(object sender, RoutedEventArgs e)
@@ -238,6 +251,7 @@ namespace Media_player_skin_V2._0
                 MediaPlayer.SpeedRatio = 1.0;
                 //MessageBox.Show(select.name);
                 currentMedia = select;
+                currentPlaylist = null;
                 MediaPlayer.Source = new Uri(currentMedia.path);
                 MediaPlayer.Play();
             }
@@ -286,6 +300,8 @@ namespace Media_player_skin_V2._0
                                 MediaPlayer.Stop();
                                 MediaPlayer.SpeedRatio = 1.0;
                                 currentMedia = pl[i].List[j];
+                                MediaNum = j;
+                                currentPlaylist = pl[i];
                                 MediaPlayer.Source = new Uri(currentMedia.path);
                                 MediaPlayer.Play();
                                 break;
@@ -421,6 +437,11 @@ namespace Media_player_skin_V2._0
                 }
                 MessageBox.Show("Selectionnez une Playlist");
             }
+        }
+
+        private void Loop_button_Click(object sender, RoutedEventArgs e)
+        {
+            Loop = !Loop;
         }
     }
 }
