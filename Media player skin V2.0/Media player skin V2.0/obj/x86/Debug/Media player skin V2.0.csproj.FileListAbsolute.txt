@@ -136,3 +136,23 @@ C:\Users\Tchiko\Desktop\Media player skin V2.0\Media player skin V2.0\obj\x86\De
 C:\Users\Tchiko\Desktop\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.0.tlog
 C:\Users\Tchiko\Desktop\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Tchiko\Desktop\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.rename.resources
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\Media player skin V2.0.exe
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\Media player skin V2.0.pdb
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\MainWindow.baml
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player dictionary.baml
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\App.baml
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\LibraryControl.g.cs
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\App.g.cs
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0_MarkupCompile.cache
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0_MarkupCompile.lref
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\LibraryControl.baml
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.g.resources
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.Properties.Resources.resources
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.rename.resources
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.read.0.tlog
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.0.tlog
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.1.tlog

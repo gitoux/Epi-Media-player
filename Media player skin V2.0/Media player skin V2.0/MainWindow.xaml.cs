@@ -214,7 +214,7 @@ namespace Media_player_skin_V2._0
                 plIndex = (int)IFormatter.Deserialize(Istream);
             else
                 plIndex = 1;
-            if (pl.Count == 0)
+            if (pl.Count == 0 || plIndex < 0 || plIndex > int.MaxValue - 1)
             {
                 plIndex = 1;
                 pl.Add(new Playlist("Playlist" + plIndex));
