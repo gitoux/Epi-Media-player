@@ -69,7 +69,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <TreeView MouseRightButtonDown="plMouseRightClick" Background="White" Name="treePl" Height="216.5" Margin="0.5,0,-0.5,94" VerticalAlignment="Bottom">
+            <TreeView Background="White" Name="treePl" Height="216.5" Margin="0.5,0,-0.5,94" VerticalAlignment="Bottom">
             </TreeView>
             <Grid x:Name="Toolbar_library" Height="58" VerticalAlignment="Top" Background="Black" Margin="0.5,0.5,0,0">
             	<Button x:Name="Update_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,8,153.5,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TUpdate_button}" RenderTransformOrigin="1.6,0.686" Width="35" Click="Refresh_Click" d:LayoutOverrides="VerticalAlignment"/>

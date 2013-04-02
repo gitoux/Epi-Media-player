@@ -46,27 +46,6 @@ namespace Media_player_skin_V2._0
             timer.Tick += new EventHandler(timer_Tick);
         }
 
-        private void plMouseRightClick(object sender, EventArgs e)
-        {
-            if (treePl.SelectedItem != null)
-            {
-                tmpNode = (TreeViewItem)treePl.SelectedItem;
-                for (int i = 0; i < pl.Count; i++)
-                {
-                    if (pl[i].Name == tmpNode.Header.ToString())
-                    {
-                        rename input = new rename();
-                        input.tmpNode = tmpNode;
-                        input.tmpPl = pl[i];
-                        input.selectedIndex = i;
-                        input.tmpOb = pl;
-                        input.Show();
-                        break;
-                    }
-                }
-            }
-        }
-
         private void Element_MediaOpened(object sender, EventArgs e)
         {
             if (MediaPlayer.NaturalDuration.HasTimeSpan)
@@ -230,10 +209,13 @@ namespace Media_player_skin_V2._0
             for (int i = 0; i < pl.Count(); i++)
             {
                 TreeViewItem tmp = new TreeViewItem();
+                tmp.MouseRightButtonDown += new MouseButtonEventHandler(renamePlaylist);
                 tmp.Header = pl[i].Name;
                 for (int j = 0; j < pl[i].List.Count; j++)
                 {
                     TreeViewItem media = new TreeViewItem();
+                    media.MouseDoubleClick += new MouseButtonEventHandler(PlaySong);
+                    media.MouseRightButtonDown += new MouseButtonEventHandler(renamePlaylist);
                     media.Header = pl[i].List[j].name;
                     tmp.Items.Add(media);
                 }
@@ -271,6 +253,48 @@ namespace Media_player_skin_V2._0
             MediaPlayer.IsMuted = false;
         }
 
+        private void renamePlaylist(object sender, EventArgs e)
+        {
+            TreeViewItem tmpItem = (TreeViewItem)sender;
+
+            string sParent = tmpItem.Header.ToString();
+            for (int i = 0; i < pl.Count; i++)
+                if (pl[i].Name == sParent)
+                {
+                    rename input = new rename();
+                    input.tmpNode = tmpItem;
+                    input.tmpPl = pl[i];
+                    input.selectedIndex = i;
+                    input.tmpOb = pl;
+                    input.Show();
+                    break;
+                }
+        }
+
+        private void PlaySong(object sender, RoutedEventArgs e)
+        {
+            TreeViewItem tmpItem = (TreeViewItem)sender;
+            TreeViewItem parent = tmpItem.Parent as TreeViewItem;
+            string sParent = parent.Header.ToString();
+            for (int i = 0; i < pl.Count; i++)
+                    if (pl[i].Name == sParent)
+                    {
+                        for (int j = 0; j < pl[i].List.Count; j++)
+                        {
+                            if (pl[i].List[j].name == tmpItem.Header.ToString())
+                            {
+                                MediaPlayer.Stop();
+                                MediaPlayer.SpeedRatio = 1.0;
+                                currentMedia = pl[i].List[j];
+                                MediaPlayer.Source = new Uri(currentMedia.path);
+                                MediaPlayer.Play();
+                                break;
+                            }
+                        }
+                        break;
+                    }
+            }
+
         private void Add_media_button_Click(object sender, RoutedEventArgs e)
         {
             if (Menu_listbox.SelectedItem == null)
@@ -296,6 +320,7 @@ namespace Media_player_skin_V2._0
                             tmpPl = pl[i];
                             tmpPl.List.Add(tmpMedia);
                             TreeViewItem newSong = new TreeViewItem();
+                            newSong.MouseDoubleClick += new MouseButtonEventHandler(PlaySong);
                             newSong.Header = tmpMedia.name;
                             tmpItem.Items.Add(newSong);
                             using (var fs = new FileStream("playlist.xml", FileMode.OpenOrCreate))
@@ -353,6 +378,7 @@ namespace Media_player_skin_V2._0
         {
             pl.Add(new Playlist("Playlist" + plIndex));
             TreeViewItem Pltmp = new TreeViewItem();
+            Pltmp.MouseRightButtonDown += new MouseButtonEventHandler(renamePlaylist);
             Pltmp.Header = "Playlist" + plIndex;
             plIndex++;
 
