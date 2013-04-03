@@ -155,3 +155,8 @@ C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player ski
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.0.tlog
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.rename.resources
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\policy.2.0.taglib-sharp.dll
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\taglib-sharp.dll
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\policy.2.0.taglib-sharp.config
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.csprojResolveAssemblyReference.cache
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.rename.resources

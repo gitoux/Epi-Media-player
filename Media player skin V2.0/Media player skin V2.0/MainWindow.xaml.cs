@@ -74,8 +74,8 @@ namespace Media_player_skin_V2._0
             MediaPlayer.Position = TimeSpan.FromSeconds(Time_video.Value);
             if (currentPlaylist != null)
             {
-                if (Loop == true && MediaNum >= currentPlaylist.List.Count)
-                    MediaNum = 0;
+                if (Loop == true && MediaNum + 1 == currentPlaylist.List.Count)
+                    MediaNum = -1;
                 if (MediaNum + 1 < currentPlaylist.List.Count)
                 {
                     MediaNum += 1;
@@ -442,6 +442,33 @@ namespace Media_player_skin_V2._0
         private void Loop_button_Click(object sender, RoutedEventArgs e)
         {
             Loop = !Loop;
+            MessageBox.Show((Loop ? "Loop is true" : "Loop is false"));
+        }
+
+        private void Next_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPlaylist != null && MediaNum + 1 < currentPlaylist.List.Count)
+            {
+                MediaPlayer.Stop();
+                MediaPlayer.Close();
+                MediaNum += 1;
+                currentMedia = currentPlaylist.List[MediaNum];
+                MediaPlayer.Source = new Uri(currentMedia.path);
+                MediaPlayer.Play();
+            }
+        }
+
+        private void Back_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentPlaylist != null && MediaNum - 1 > -1)
+            {
+                MediaPlayer.Stop();
+                MediaPlayer.Close();
+                MediaNum -= 1;
+                currentMedia = currentPlaylist.List[MediaNum];
+                MediaPlayer.Source = new Uri(currentMedia.path);
+                MediaPlayer.Play();
+            }
         }
     }
 }

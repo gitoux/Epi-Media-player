@@ -31,16 +31,60 @@ namespace Media_player_skin_V2._0
         public string path { get; set; }
         public string name { get; set; }
         public string type { get; set; }
+        public string title = "";
+        public string performer = "";
+        public string album = "";
+        public string albumAuthor = "";
+        public string genre = "";
+        TimeSpan length = TimeSpan.MinValue;
 
         public Media(string newPath, string newType)
         {
             path = newPath;
             type = newType;
             name = System.IO.Path.GetFileName(path);
+            if (System.IO.Path.GetExtension(name) == ".mkv")
+                MessageBox.Show("Mkv is it!");
+            else
+                getInfoMedia();
         }
         
         public Media()
         {
+        }
+
+        private void getInfoMedia()
+        {
+            TagLib.File file = null;
+
+            try
+            {
+                file = TagLib.File.Create(path);
+            }
+            catch (TagLib.UnsupportedFormatException/*Exception*/)
+            {
+                return;
+            }
+            title = file.Tag.Title;
+            if (type == "Music")
+            {
+                if (file.Tag.Performers.Length > 0)
+                    performer = file.Tag.Performers[0];
+                album = file.Tag.Album;
+                if (file.Tag.AlbumArtists.Length > 0)
+                    albumAuthor = file.Tag.AlbumArtists[0];
+            }
+            if (file.Tag.Genres.Length > 0)
+                genre = file.Tag.Genres[0];
+            length = file.Properties.Duration;
+            //MessageBox.Show("\nTitle: " + file.Tag.Title +
+            //    "\nPerformer: " + (file.Tag.Performers.Length > 0 ? file.Tag.Performers[0]: "") +
+            //    "\nAlbum: " + file.Tag.Album +
+            //    "\nAlbumArtist: " + (file.Tag.AlbumArtists.Length > 0 ? file.Tag.AlbumArtists[0]: "") +
+            //    "\nGenre: " + (file.Tag.Genres.Length>0 ? file.Tag.Genres[0]: "") +
+            //    "Duration: " + file.Properties.Duration);      
+            //TagLib.IPicture[] pictures = file.Tag.Pictures;
+            //MessageBox.Show("Embedded Pictures: " + pictures.Length);
         }
     }
 

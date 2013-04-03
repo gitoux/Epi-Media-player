@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\
 Media_player_skin_V2._0
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\App.xaml
 31544075464
 
@@ -16,5 +16,5 @@ C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin 
 17-2123906550
 LibraryControl.xaml;MainWindow.xaml;Media player dictionary.xaml;
 
-False
+True
 

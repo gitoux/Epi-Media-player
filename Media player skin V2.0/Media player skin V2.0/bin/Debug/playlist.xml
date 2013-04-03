@@ -1,37 +1,17 @@
 <?xml version="1.0"?>
 <ArrayOfPlaylist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Playlist>
-    <Name>test</Name>
+    <Name>GoT</Name>
     <List>
       <Media>
-        <path>C:\Users\Pica_d\Videos\GTAVTrailer.wmv</path>
-        <name>GTAVTrailer.wmv</name>
-        <type>Video</type>
+        <path>C:\Users\Nyda\Music\Game Of Thrones Season 2 - Ramin Djawadi - Main Title.mp3</path>
+        <name>Game Of Thrones Season 2 - Ramin Djawadi - Main Title.mp3</name>
+        <type>Music</type>
       </Media>
       <Media>
-        <path>C:\Users\Pica_d\Videos\[HIMYM - S05] Episode 17.avi</path>
-        <name>[HIMYM - S05] Episode 17.avi</name>
-        <type>Video</type>
-      </Media>
-      <Media>
-        <path>C:\Users\Pica_d\Videos\Sample Videos\Wildlife.wmv</path>
-        <name>Wildlife.wmv</name>
-        <type>Video</type>
-      </Media>
-    </List>
-  </Playlist>
-  <Playlist>
-    <Name>Playlist3</Name>
-    <List>
-      <Media>
-        <path>E:\Download\ThTr02072\The Transporter (2002) 720p by johnchen [MKV Corp].mkv</path>
-        <name>The Transporter (2002) 720p by johnchen [MKV Corp].mkv</name>
-        <type>Video</type>
-      </Media>
-      <Media>
-        <path>E:\Download\LaCA93SE10072\La Classe Américaine (1993)[Special Edition 2010] 720p by Solon8 [MKV Corp].mkv</path>
-        <name>La Classe Américaine (1993)[Special Edition 2010] 720p by Solon8 [MKV Corp].mkv</name>
-        <type>Video</type>
+        <path>C:\Users\Nyda\Music\Game Of Thrones Season 2 - Ramin Djawadi - The Rains Of Castomere.mp3</path>
+        <name>Game Of Thrones Season 2 - Ramin Djawadi - The Rains Of Castomere.mp3</name>
+        <type>Music</type>
       </Media>
     </List>
   </Playlist>

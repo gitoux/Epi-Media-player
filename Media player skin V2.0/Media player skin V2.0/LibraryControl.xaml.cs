@@ -82,33 +82,33 @@ namespace Media_player_skin_V2._0
             string filename = fbd.SelectedPath;
             if (filename != "")
             {
+                DirMedia dm = null;
+                    
                 try
                 {
-                    DirMedia dm = null;
-                    //System.Windows.Forms.MessageBox.Show(choosenType);
                     Directory.GetFiles(filename, "*.*", SearchOption.AllDirectories);
-                    foreach (DirMedia dmTmp in listDir)
-                    {
-                        if (dmTmp.type == choosenType)
-                        {
-                            dm = dmTmp;
-                        }
-                    }
-                    if (dm != null && dm.directories.Where(dirPath => dirPath.dir == filename).Any() == false)
-                    {
-                        foreach (DirMedia md in listDir)
-                        {
-                            if (md.type == choosenType)
-                            {
-                                md.directories.Add(new directoryMedia(filename, md.type));
-                            }
-                        }
-                    }
                 }
                 catch (Exception)
                 {
                     System.Windows.Forms.MessageBox.Show("Directory cannot be a library dir.");
                     return;
+                }
+                foreach (DirMedia dmTmp in listDir)
+                {
+                        if (dmTmp.type == choosenType)
+                        {
+                            dm = dmTmp;
+                        }
+                    }
+                if (dm != null && dm.directories.Where(dirPath => dirPath.dir == filename).Any() == false)
+                {
+                    foreach (DirMedia md in listDir)
+                    {
+                        if (md.type == choosenType)
+                        {
+                            md.directories.Add(new directoryMedia(filename, md.type));
+                        }
+                    }
                 }
             }
         }
