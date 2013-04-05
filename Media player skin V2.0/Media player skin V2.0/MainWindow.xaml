@@ -43,37 +43,66 @@
                 <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
+        <Storyboard x:Key="ECMenu_open">
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CMenu_open_button">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CMenu_close_button">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Extented_Menu">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="ECMenu_close">
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CMenu_close_button">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="CMenu_open_button">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Extented_Menu">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        </Storyboard>
 	</Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Menu_close_button">
             <BeginStoryboard x:Name="EMenu_close_BeginStoryboard" Storyboard="{StaticResource EMenu_close}"/>
+            <BeginStoryboard x:Name="ECMenu_close_BeginStoryboard1" Storyboard="{StaticResource ECMenu_close}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Menu_open_button">
             <BeginStoryboard x:Name="EMenu_open_BeginStoryboard" Storyboard="{StaticResource EMenu_open}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Full_screen_button">
             <BeginStoryboard Storyboard="{StaticResource EMenu_close}"/>
+            <BeginStoryboard x:Name="ECMenu_close_BeginStoryboard2" Storyboard="{StaticResource ECMenu_close}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CMenu_open_button">
+        	<BeginStoryboard x:Name="ECMenu_open_BeginStoryboard" Storyboard="{StaticResource ECMenu_open}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CMenu_close_button">
+        	<BeginStoryboard x:Name="ECMenu_close_BeginStoryboard" Storyboard="{StaticResource ECMenu_close}"/>
         </EventTrigger>
     </Window.Triggers>
     <Grid x:Name="Global_grid" Background="White" Margin="0">
         <Grid x:Name="Playlist_menu_toolbar" HorizontalAlignment="Left" Width="197" Background="White">
             <ListBox x:Name="Menu_listbox" Margin="-0.5,62.5,0.5,314.5" Background="Black" MouseDoubleClick="MenuBox_MouseDoubleClick" Foreground="White"> 
 				<ListBox.GroupStyle>
-                    <GroupStyle ContainerStyle="{StaticResource ContainerStyle}">
-                    </GroupStyle>
+                    <GroupStyle ContainerStyle="{StaticResource ContainerStyle}"/>
                 </ListBox.GroupStyle>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding name}" Foreground="White">
-                        </TextBlock>
+                        <TextBlock Text="{Binding name}" Foreground="White"/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <TreeView Background="White" Name="treePl" Height="216.5" Margin="0.5,0,-0.5,94" VerticalAlignment="Bottom">
-            </TreeView>
+        	<TreeView Background="Black" x:Name="treePl" Height="216.5" Margin="0,0,0,94" VerticalAlignment="Bottom" Foreground="White" />
             <Grid x:Name="Toolbar_library" Height="58" VerticalAlignment="Top" Background="Black" Margin="0.5,0.5,0,0">
             	<Button x:Name="Update_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,8,153.5,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TUpdate_button}" RenderTransformOrigin="1.6,0.686" Width="35" Click="Refresh_Click" d:LayoutOverrides="VerticalAlignment"/>
-            	<Button x:Name="Add_library_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="47,8,0,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TGestion_lib_button}" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Left" Width="39" Click="AddLibrary_Click" d:LayoutOverrides="VerticalAlignment"/>
+            	<Button x:Name="Add_library_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="47,8,0,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TGestion_lib_button}" RenderTransformOrigin="1.6,0.686" Click="AddLibrary_Click" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Left" Width="39"/>
+            	<Button x:Name="CMenu_open_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="153.5,8,8,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TCMenu_open_button}" RenderTransformOrigin="1.6,0.686" Width="35" Click="Refresh_Click" d:LayoutOverrides="VerticalAlignment" Visibility="Hidden"/>
+            	<Button x:Name="CMenu_close_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="153.5,8,8,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TCMenu_close_button}" RenderTransformOrigin="1.6,0.686" Width="35" Click="Refresh_Click" d:LayoutOverrides="VerticalAlignment"/>
             </Grid>
             <Grid x:Name="Toolbar_playlist" Height="90" VerticalAlignment="Bottom" Background="Black" Margin="0,0,0.5,0">
             	<Button x:Name="Add_playlist_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,47,153.5,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TAdd_playlist_button}" RenderTransformOrigin="1.6,0.686" Click="Add_playlist_button_Click" />
@@ -112,6 +141,7 @@
             <Grid x:Name="Video_Grid" Margin="0,0,0,114" Background="Black">
                 <MediaElement Name="MediaPlayer" LoadedBehavior="Manual"
                       Position="00:00:00" MediaOpened="Element_MediaOpened" MediaEnded="Element_MediaEnded" Grid.Column="1"/>
+                <Grid x:Name="Extented_Menu" Margin="0,0,382,0" Background="White"/>
             </Grid>
         </Grid>
 
