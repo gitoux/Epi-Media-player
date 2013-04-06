@@ -20,25 +20,38 @@ namespace Media_player_skin_V2._0
     /// <summary>
     /// Interaction logic for LibraryControl.xaml
     /// </summary>
+    [Serializable]
     public class directoryMedia
     {
         public string dir { get; set; }
-        public string type { get; set; }
+        public eMediaType type { get; set; }
 
-        public directoryMedia(string nDir, string nType)
+        public directoryMedia()
+        {
+            dir = "";
+            type = eMediaType.NONE;
+        }
+        public directoryMedia(string nDir, eMediaType nType)
         {
             dir = nDir;
             type = nType;
         }
     }
 
+    [Serializable]
     public class DirMedia
     {
         public int countDir;
-        public string type;
+        public eMediaType type;
         public ObservableCollection<directoryMedia> directories = new ObservableCollection<directoryMedia>();
 
-        public DirMedia(string typeMedia)
+
+        public DirMedia()
+        {
+            countDir = 0;
+            type = eMediaType.NONE;
+        }
+        public DirMedia(eMediaType typeMedia)
         {
             countDir = 0;
             type = typeMedia;
@@ -66,11 +79,19 @@ namespace Media_player_skin_V2._0
 
         private void AddLibrary_Click(object sender, RoutedEventArgs e)
         {
-            string choosenType;
+            eMediaType choosenType = eMediaType.NONE;
             TreeViewItem tmp = LibraryPath.SelectedItem as TreeViewItem;
             //PictureTree.
             if (tmp != null)
-                choosenType = tmp.Header as string;
+            {
+                string str = tmp.Header as string;
+                if (str == "Music")
+                    choosenType = eMediaType.MUSIC;
+                else if (str == "Video")
+                    choosenType = eMediaType.VIDEO;
+                else if (str == "Pictures")
+                    choosenType = eMediaType.IMAGE;
+            }
             else
             {
                 System.Windows.Forms.MessageBox.Show("Not a type of library folder choosen.");

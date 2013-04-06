@@ -34,7 +34,7 @@ namespace Media_player_skin_V2._0
         private bool isDragging = false;
         private bool Loop = false;
         private Thickness marginSave;
-        private ObservableCollection<DirMedia> dir = new ObservableCollection<DirMedia>();
+        private ObservableCollection<DirMedia> dir = null;
         private LibraryControl libraryControlWindow = new LibraryControl();
         public ObservableCollection<Playlist> pl;
         public TreeViewItem tmpNode;
@@ -172,9 +172,33 @@ namespace Media_player_skin_V2._0
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dir.Add(new DirMedia("Pictures"));
-            dir.Add(new DirMedia("Video"));
-            dir.Add(new DirMedia("Music"));
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\library.xml"))
+            {
+                using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\library.xml", FileMode.OpenOrCreate))
+                {
+                    try
+                    {
+                        XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<DirMedia>));
+                        if (fs.Length > 0)
+                        {
+                            dir = xml.Deserialize(fs) as ObservableCollection<DirMedia>;
+                            refreshLibrary();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+            }
+            if (dir == null)
+            {
+                dir = new ObservableCollection<DirMedia>();
+                dir.Add(new DirMedia(eMediaType.IMAGE));
+                dir.Add(new DirMedia(eMediaType.VIDEO));
+                dir.Add(new DirMedia(eMediaType.MUSIC));
+            }
             dir[0].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListPictureChanged);
             dir[1].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListVideoChanged);
             dir[2].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListMusicChanged);
@@ -467,7 +491,7 @@ namespace Media_player_skin_V2._0
         private void PictureTree_Selected(object sender, RoutedEventArgs e)
         {
             listViewMedia.View = grid.gridPicture;
-            ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia => typeMedia.type == "Images"));
+            ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia => typeMedia.type == eMediaType.IMAGE));
             view.SortDescriptions.Add(new SortDescription("title", ListSortDirection.Ascending));
             listViewMedia.ItemsSource = view;
         }
@@ -479,7 +503,7 @@ namespace Media_player_skin_V2._0
             if ((String)selected.Header == "Music")
             {
                 listViewMedia.View = grid.gridMusic;
-                ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia => typeMedia.type == "Music"));
+                ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia => typeMedia.type == eMediaType.MUSIC));
                 view.SortDescriptions.Add(new SortDescription("album", ListSortDirection.Ascending));
                 listViewMedia.ItemsSource = view;
             }
@@ -488,7 +512,7 @@ namespace Media_player_skin_V2._0
         private void VideoTree_Selected(object sender, RoutedEventArgs e)
         {
             listViewMedia.View = grid.gridVideo;
-            ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia => typeMedia.type == "Video"));
+            ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia => typeMedia.type == eMediaType.VIDEO));
             view.SortDescriptions.Add(new SortDescription("title", ListSortDirection.Ascending));
             listViewMedia.ItemsSource = view;
         }
@@ -559,7 +583,7 @@ namespace Media_player_skin_V2._0
                 {
                     listViewMedia.View = grid.gridMusic;
                     ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia =>
-                        typeMedia.type == "Music" && typeMedia.album == element));
+                        typeMedia.type == eMediaType.MUSIC && typeMedia.album == element));
                     view.SortDescriptions.Add(new SortDescription("title", ListSortDirection.Ascending));
                     listViewMedia.ItemsSource = view;
                 }
@@ -567,7 +591,7 @@ namespace Media_player_skin_V2._0
                 {
                     listViewMedia.View = grid.gridMusic;
                     ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia =>
-                        typeMedia.type == "Music" && typeMedia.artist == element));
+                        typeMedia.type == eMediaType.MUSIC && typeMedia.artist == element));
                     view.SortDescriptions.Add(new SortDescription("title", ListSortDirection.Ascending));
                     listViewMedia.ItemsSource = view;
                 }
@@ -575,7 +599,7 @@ namespace Media_player_skin_V2._0
                 {
                     listViewMedia.View = grid.gridMusic;
                     ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia =>
-                        typeMedia.type == "Music" && typeMedia.genre == element));
+                        typeMedia.type == eMediaType.MUSIC && typeMedia.genre == element));
                     view.SortDescriptions.Add(new SortDescription("title", ListSortDirection.Ascending));
                     listViewMedia.ItemsSource = view;
                 }

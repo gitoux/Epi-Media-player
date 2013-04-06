@@ -6,9 +6,19 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Collections.Specialized;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace Media_player_skin_V2._0
 {
+    [Serializable]
+    public enum eMediaType
+    { 
+        VIDEO,
+        MUSIC,
+        IMAGE,
+        NONE
+    }
+
     [Serializable]
     public class Playlist
     {
@@ -30,14 +40,14 @@ namespace Media_player_skin_V2._0
     {
         public string path { get; set; }
         public string name { get; set; }
-        public string type { get; set; }
+        public eMediaType type { get; set; }
         public string title { get; set; }
         public string artist { get; set; }
         public string album { get; set; }
         public string genre { get; set; }
         public TimeSpan length { get; set; }
 
-        public Media(string newPath, string newType)
+        public Media(string newPath, eMediaType newType)
         {
             path = newPath;
             type = newType;
@@ -74,7 +84,7 @@ namespace Media_player_skin_V2._0
                 return;
             }
             title = file.Tag.Title;
-            if (type == "Music")
+            if (type == eMediaType.MUSIC)
             {
                 if (file.Tag.Performers.Length > 0)
                     artist = file.Tag.Performers[0];
@@ -82,7 +92,7 @@ namespace Media_player_skin_V2._0
             }
             if (file.Tag.Genres.Length > 0)
                 genre = file.Tag.Genres[0];
-            if (type != "Images")
+            if (type != eMediaType.IMAGE)
                 length = file.Properties.Duration;
         }
     }
@@ -110,7 +120,7 @@ namespace Media_player_skin_V2._0
                     string[] filepath = Directory.GetFiles(path, s, SearchOption.AllDirectories);
                     foreach (string pathToFile in filepath)
                     {
-                        listMedia.Add(new Media(pathToFile, "Images"));
+                        listMedia.Add(new Media(pathToFile, eMediaType.IMAGE));
                     }
                 }
                 tmp.countDir = tmp.directories.Count;
@@ -120,6 +130,7 @@ namespace Media_player_skin_V2._0
                 refreshLibrary();
                 tmp.countDir = tmp.directories.Count;
             }
+            SerializeLibrary();
         }
 
         private void DirListVideoChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -134,7 +145,7 @@ namespace Media_player_skin_V2._0
                     string[] filepath = Directory.GetFiles(path, s, SearchOption.AllDirectories);
                     foreach (string pathToFile in filepath)
                     {
-                        listMedia.Add(new Media(pathToFile, "Video"));
+                        listMedia.Add(new Media(pathToFile, eMediaType.VIDEO));
                     }
                 }
                 tmp.countDir = tmp.directories.Count;
@@ -144,6 +155,7 @@ namespace Media_player_skin_V2._0
                 refreshLibrary();
                 tmp.countDir = tmp.directories.Count;
             }
+            SerializeLibrary();
         }
 
         private void DirListMusicChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -158,7 +170,7 @@ namespace Media_player_skin_V2._0
                     string[] filepath = Directory.GetFiles(path, s, SearchOption.AllDirectories);
                     foreach (string pathToFile in filepath)
                     {
-                        listMedia.Add(new Media(pathToFile, "Music"));
+                        listMedia.Add(new Media(pathToFile, eMediaType.MUSIC));
                     }
                 }
                 tmp.countDir = tmp.directories.Count;
@@ -167,6 +179,17 @@ namespace Media_player_skin_V2._0
             {
                 refreshLibrary();
                 tmp.countDir = tmp.directories.Count;
+            }
+            SerializeLibrary();
+        }
+
+        private void SerializeLibrary()
+        {
+            using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\library.xml",
+                    FileMode.Create))
+            {
+                XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<DirMedia>));
+                xml.Serialize(fs, this.dir);
             }
         }
 
@@ -181,7 +204,7 @@ namespace Media_player_skin_V2._0
                     string[] filepath = Directory.GetFiles(dm.dir, s, SearchOption.AllDirectories);
                     foreach (string pathToFile in filepath)
                     {
-                        listMedia.Add(new Media(pathToFile, "Images"));
+                        listMedia.Add(new Media(pathToFile, eMediaType.IMAGE));
                     }
                 }
             }
@@ -198,7 +221,7 @@ namespace Media_player_skin_V2._0
                     string[] filepath = Directory.GetFiles(dm.dir, s, SearchOption.AllDirectories);
                     foreach (string pathToFile in filepath)
                     {
-                        listMedia.Add(new Media(pathToFile, "Video"));
+                        listMedia.Add(new Media(pathToFile, eMediaType.VIDEO));
                     }
                 }
             }
@@ -215,7 +238,7 @@ namespace Media_player_skin_V2._0
                     string[] filepath = Directory.GetFiles(dm.dir, s, SearchOption.AllDirectories);
                     foreach (string pathToFile in filepath)
                     {
-                        listMedia.Add(new Media(pathToFile, "Music"));
+                        listMedia.Add(new Media(pathToFile, eMediaType.MUSIC));
                     }
                 }
             }
