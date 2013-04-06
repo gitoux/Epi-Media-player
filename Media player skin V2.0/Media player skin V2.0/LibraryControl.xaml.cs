@@ -88,9 +88,9 @@ namespace Media_player_skin_V2._0
                 {
                     Directory.GetFiles(filename, "*.*", SearchOption.AllDirectories);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show("Directory cannot be a library dir.");
+                    System.Windows.Forms.MessageBox.Show("Directory cannot be a library dir : " + ex.Message);
                     return;
                 }
                 foreach (DirMedia dmTmp in listDir)

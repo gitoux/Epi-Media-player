@@ -68,8 +68,9 @@ namespace Media_player_skin_V2._0
             {
                 file = TagLib.File.Create(path);
             }
-            catch (TagLib.UnsupportedFormatException/*Exception*/)
+            catch (Exception e)
             {
+                MessageBox.Show(e.Message);
                 return;
             }
             title = file.Tag.Title;
@@ -81,15 +82,8 @@ namespace Media_player_skin_V2._0
             }
             if (file.Tag.Genres.Length > 0)
                 genre = file.Tag.Genres[0];
-            length = file.Properties.Duration;
-            //MessageBox.Show("\nTitle: " + file.Tag.Title +
-            //    "\nPerformer: " + (file.Tag.Performers.Length > 0 ? file.Tag.Performers[0] : "") +
-            //    "\nAlbum: " + file.Tag.Album +
-            //    "\nAlbumArtist: " + (file.Tag.AlbumArtists.Length > 0 ? file.Tag.AlbumArtists[0] : "") +
-            //    "\nGenre: " + (file.Tag.Genres.Length > 0 ? file.Tag.Genres[0] : "") +
-            //    "Duration: " + file.Properties.Duration);      
-            ////TagLib.IPicture[] pictures = file.Tag.Pictures;
-            //MessageBox.Show("Embedded Pictures: " + pictures.Length);
+            if (type != "Images")
+                length = file.Properties.Duration;
         }
     }
 
