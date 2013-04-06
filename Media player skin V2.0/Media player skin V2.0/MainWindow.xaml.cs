@@ -205,7 +205,7 @@ namespace Media_player_skin_V2._0
             this.libraryControlWindow.listDir = dir;
             Sound_settings.ValueChanged += ChangeMediaVolume;
 
-            using (var fs = new FileStream("playlist.xml", FileMode.OpenOrCreate))
+            using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlist.xml", FileMode.OpenOrCreate))
             {
                 try
                 {
@@ -221,7 +221,7 @@ namespace Media_player_skin_V2._0
                     pl = new ObservableCollection<Playlist>();
                 }
             }
-            Stream Istream = File.Open("playlistNum", FileMode.OpenOrCreate);
+            Stream Istream = File.Open(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlistNum", FileMode.OpenOrCreate);
             BinaryFormatter IFormatter = new BinaryFormatter();
             if (Istream.Length > 0 && pl.Count > 0)
                 plIndex = (int)IFormatter.Deserialize(Istream);
@@ -232,7 +232,7 @@ namespace Media_player_skin_V2._0
                 plIndex = 1;
                 pl.Add(new Playlist("Playlist" + plIndex));
                 plIndex++;
-                using (var fs = new FileStream("playlist.xml", FileMode.Create))
+                using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlist.xml", FileMode.Create))
                 {
                     XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
                     xml.Serialize(fs, pl);
@@ -348,7 +348,7 @@ namespace Media_player_skin_V2._0
                             newSong.Header = tmpMedia.name;
                             newSong.Foreground = Brushes.White;
                             tmpItem.Items.Add(newSong);
-                            using (var fs = new FileStream("playlist.xml", FileMode.OpenOrCreate))
+                            using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlist.xml", FileMode.OpenOrCreate))
                             {
                                 XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
                                 xml.Serialize(fs, pl);
@@ -384,7 +384,7 @@ namespace Media_player_skin_V2._0
                                 {
                                     curPlaylist.List.RemoveAt(j);
                                     tmpPl.Items.Remove(tmpMedia);
-                                    using (var fs = new FileStream("playlist.xml", FileMode.Create))
+                                    using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlist.xml", FileMode.Create))
                                     {
                                         XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
                                         xml.Serialize(fs, pl);
@@ -408,13 +408,13 @@ namespace Media_player_skin_V2._0
             Pltmp.Header = "Playlist" + plIndex;
             plIndex++;
 
-            using (var fs = new FileStream("playlist.xml", FileMode.OpenOrCreate))
+            using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlist.xml", FileMode.OpenOrCreate))
             {
                 XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
                 xml.Serialize(fs, pl);
             }
 
-            Stream Istream = File.Open("playlistNum", FileMode.OpenOrCreate);
+            Stream Istream = File.Open(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlistNum", FileMode.OpenOrCreate);
             BinaryFormatter IFormatter = new BinaryFormatter();
             IFormatter.Serialize(Istream, plIndex);
             Istream.Close();
@@ -437,7 +437,7 @@ namespace Media_player_skin_V2._0
                     {
                         pl.Remove(pl[i]);
                         treePl.Items.Remove(tmpNode);
-                        using (var fs = new FileStream("playlist.xml", FileMode.Create))
+                        using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlist.xml", FileMode.Create))
                         {
                             XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
                             xml.Serialize(fs, pl);
