@@ -95,11 +95,11 @@ namespace Media_player_skin_V2._0
                 }
                 foreach (DirMedia dmTmp in listDir)
                 {
-                        if (dmTmp.type == choosenType)
-                        {
-                            dm = dmTmp;
-                        }
+                    if (dmTmp.type == choosenType)
+                    {
+                        dm = dmTmp;
                     }
+                }
                 if (dm != null && dm.directories.Where(dirPath => dirPath.dir == filename).Any() == false)
                 {
                     foreach (DirMedia md in listDir)

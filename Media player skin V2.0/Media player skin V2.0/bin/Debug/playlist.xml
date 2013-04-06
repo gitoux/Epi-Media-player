@@ -1,17 +1,102 @@
 <?xml version="1.0"?>
 <ArrayOfPlaylist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Playlist>
-    <Name>GoT</Name>
+    <Name>omer</Name>
     <List>
       <Media>
-        <path>C:\Users\Nyda\Music\Game Of Thrones Season 2 - Ramin Djawadi - Main Title.mp3</path>
-        <name>Game Of Thrones Season 2 - Ramin Djawadi - Main Title.mp3</name>
+        <path>E:\Games\Steam\steamapps\common\hotline_miami\TurfMain.ogg</path>
+        <name>TurfMain</name>
         <type>Music</type>
+        <title>Turf</title>
+        <artist>El Huervo</artist>
+        <album>Unknown album</album>
+        <genre>Electronic</genre>
+        <length />
       </Media>
       <Media>
-        <path>C:\Users\Nyda\Music\Game Of Thrones Season 2 - Ramin Djawadi - The Rains Of Castomere.mp3</path>
-        <name>Game Of Thrones Season 2 - Ramin Djawadi - The Rains Of Castomere.mp3</name>
+        <path>E:\Games\Steam\steamapps\common\hotline_miami\TurfIntro.ogg</path>
+        <name>TurfIntro</name>
         <type>Music</type>
+        <title>TurfIntro</title>
+        <artist>Unknown artist</artist>
+        <album>Unknown album</album>
+        <genre>Unknown genre</genre>
+        <length />
+      </Media>
+      <Media>
+        <path>E:\Games\Steam\steamapps\common\hotline_miami\Flatline.ogg</path>
+        <name>Flatline</name>
+        <type>Music</type>
+        <title>Flatline</title>
+        <artist>Unknown artist</artist>
+        <album>Unknown album</album>
+        <genre>Unknown genre</genre>
+        <length />
+      </Media>
+      <Media>
+        <path>C:\Users\Pica_d\Videos\[HIMYM - S05] Episode 17.avi</path>
+        <name>[HIMYM - S05] Episode 17</name>
+        <type>Video</type>
+        <title>[HIMYM - S05] Episode 17</title>
+        <artist>Unknown artist</artist>
+        <album>Unknown album</album>
+        <genre>Unknown genre</genre>
+        <length />
+      </Media>
+      <Media>
+        <path>C:\Users\Pica_d\Videos\Sample Videos\Wildlife.wmv</path>
+        <name>Wildlife</name>
+        <type>Video</type>
+        <title>Wildlife in HD</title>
+        <artist>Unknown artist</artist>
+        <album>Unknown album</album>
+        <genre>Unknown genre</genre>
+        <length />
+      </Media>
+      <Media>
+        <path>E:\Games\Steam\steamapps\common\hotline_miami\Hydrogen.ogg</path>
+        <name>Hydrogen</name>
+        <type>Music</type>
+        <title>Hydrogen</title>
+        <artist>M O O N</artist>
+        <album>M O O N</album>
+        <genre>Unknown genre</genre>
+        <length />
+      </Media>
+    </List>
+  </Playlist>
+  <Playlist>
+    <Name>GTA</Name>
+    <List>
+      <Media>
+        <path>C:\Users\Pica_d\Videos\GTAVTrailer.wmv</path>
+        <name>GTAVTrailer</name>
+        <type>Video</type>
+        <title>GTAVTrailer</title>
+        <artist>Unknown artist</artist>
+        <album>Unknown album</album>
+        <genre>Unknown genre</genre>
+        <length />
+      </Media>
+      <Media>
+        <path>C:\Users\Pica_d\Downloads\GTAVTrailer1.mp4</path>
+        <name>GTAVTrailer1</name>
+        <type>Video</type>
+        <title>GTAVTrailer1</title>
+        <artist>Unknown artist</artist>
+        <album>Unknown album</album>
+        <genre>Unknown genre</genre>
+        <length />
+      </Media>
+      <Media>
+        <path>C:\Users\Pica_d\Pictures\Sample Pictures\Desert.jpg</path>
+        <name>Desert</name>
+        <type>Images</type>
+        <title>Desert</title>
+        <artist>Unknown artist</artist>
+        <album>Unknown album</album>
+        <genre>Unknown genre</genre>
+        <length />
       </Media>
     </List>
   </Playlist>
