@@ -335,6 +335,11 @@ namespace Media_player_skin_V2._0
             {
                 Media tmpMedia = (Media)listViewMedia.SelectedItem;
                 TreeViewItem tmpItem = (TreeViewItem)treePl.SelectedItem;
+                if (tmpMedia == null)
+                {
+                    MessageBox.Show("Sélectionnez un média à ajouter à la playlist.");
+                    return;
+                }
                 if (tmpItem.Parent.GetType().ToString() == "System.Windows.Controls.TreeView")
                 {
                     Playlist tmpPl;
@@ -535,7 +540,7 @@ namespace Media_player_skin_V2._0
         {
             List<String> listAlbum = new List<String>();
 
-            listViewMedia.View = grid.gridArtist;
+            listViewMedia.View = grid.gridAlbum;
             foreach (Media m in listMedia)
             {
                 if (!listAlbum.Contains(m.album))
@@ -549,7 +554,7 @@ namespace Media_player_skin_V2._0
         {
             List<String> listGenre = new List<String>();
 
-            listViewMedia.View = grid.gridArtist;
+            listViewMedia.View = grid.gridGenre;
             foreach (Media m in listMedia)
             {
                 if (!listGenre.Contains(m.genre))

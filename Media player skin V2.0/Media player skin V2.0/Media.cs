@@ -62,7 +62,7 @@ namespace Media_player_skin_V2._0
                 getInfoMedia();
             title = (title != null ? title : name);
             artist = (artist != null ? artist : "Unknown artist");
-            album = (album != null ? artist : "Unknown album");
+            album = (album != null ? album : "Unknown album");
             genre = (genre != null ? genre : "Unknown genre");
         }
         
