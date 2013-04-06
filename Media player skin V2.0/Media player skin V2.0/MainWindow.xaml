@@ -89,8 +89,8 @@
             <Grid x:Name="Toolbar_library" Height="58" VerticalAlignment="Top" Background="Black" Margin="0.5,0.5,0,0">
             	<Button x:Name="Update_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,8,153.5,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TUpdate_button}" RenderTransformOrigin="1.6,0.686" Width="35" Click="Refresh_Click" d:LayoutOverrides="VerticalAlignment"/>
             	<Button x:Name="Add_library_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="47,8,0,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TGestion_lib_button}" RenderTransformOrigin="1.6,0.686" Click="AddLibrary_Click" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Left" Width="39"/>
-            	<Button x:Name="CMenu_open_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="153.5,8,8,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TCMenu_open_button}" RenderTransformOrigin="1.6,0.686" Width="35" d:LayoutOverrides="VerticalAlignment" Visibility="Hidden"/>
-            	<Button x:Name="CMenu_close_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="153.5,8,8,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TCMenu_close_button}" RenderTransformOrigin="1.6,0.686" Width="35" d:LayoutOverrides="VerticalAlignment"/>
+            	<Button x:Name="CMenu_open_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="153.5,8,8,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TCMenu_open_button}" RenderTransformOrigin="1.6,0.686" Width="35" d:LayoutOverrides="VerticalAlignment" Visibility="Hidden" Click="CMenu_open_button_Click"/>
+            	<Button x:Name="CMenu_close_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="153.5,8,8,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TCMenu_close_button}" RenderTransformOrigin="1.6,0.686" Width="35" d:LayoutOverrides="VerticalAlignment" Click="CMenu_close_button_Click"/>
             </Grid>
             <Grid x:Name="Toolbar_playlist" Height="90" VerticalAlignment="Bottom" Background="Black" Margin="0,0,0.5,0">
             	<Button x:Name="Add_playlist_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="8,47,153.5,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TAdd_playlist_button}" RenderTransformOrigin="1.6,0.686" Click="Add_playlist_button_Click" />
@@ -125,15 +125,15 @@
                 <Slider x:Name="Sound_settings" HorizontalAlignment="Right" Margin="0,35,8,47" Width="135" Grid.Column="2" Minimum="0" Maximum="1" Value="0.5"/>
                 <Button x:Name="Menu_close_button" MaxWidth="80" MaxHeight="40" Margin="376.182,0,327.818,15" MinWidth="80" MinHeight="40" Style="{DynamicResource TMenu_close_button}" RenderTransformOrigin="1.6,0.686" Height="40" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox"/>
                 <Button x:Name="Menu_open_button" MaxWidth="80" MaxHeight="40" Margin="376.182,0,327.818,15" MinWidth="80" MinHeight="40" Style="{DynamicResource TMenu_open_button}" RenderTransformOrigin="1.6,0.686" Height="40" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Visibility="Hidden"/>
-                <TextBlock Height="17" HorizontalAlignment="Left" Margin="372,33,0,0" Name="PlayingMedia" Text="Playing Media" VerticalAlignment="Top" Width="229" Foreground="White"/>
+                <TextBlock Height="17" HorizontalAlignment="Left" Margin="372,33,0,0" x:Name="PlayingMedia" Text="Playing Media" VerticalAlignment="Top" Width="229" Foreground="White"/>
             </Grid>
             <Grid x:Name="Video_Grid" Margin="0,0,0,114" Background="Black">
-                <MediaElement Name="MediaPlayer" LoadedBehavior="Manual"
+                <MediaElement x:Name="MediaPlayer" LoadedBehavior="Manual"
                       Position="00:00:00" MediaOpened="Element_MediaOpened" MediaEnded="Element_MediaEnded" Grid.Column="1"/>
-                <Grid x:Name="Extented_Menu" Margin="0,0,147,0" Background="Black">
-                    <ListView HorizontalAlignment="Left" Name="listViewMedia" Background="Black" Foreground="White" Grid.Column="1" MouseDoubleClick="listViewMedia_MouseDoubleClick" GridViewColumnHeader.Click="listViewMedia_Click"/>
-                </Grid>
             </Grid>
+            <Grid x:Name="Extented_Menu" Margin="0,0,147,114" Background="Black">
+            	<ListView x:Name="listViewMedia" Background="Black" Foreground="White" MouseDoubleClick="listViewMedia_MouseDoubleClick" ButtonBase.Click="listViewMedia_Click" d:LayoutOverrides="GridBox"/>
+        	</Grid>
         </Grid>
 
     </Grid>

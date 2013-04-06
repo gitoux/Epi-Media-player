@@ -631,5 +631,15 @@ namespace Media_player_skin_V2._0
             dataView.SortDescriptions.Add(new SortDescription(sortBy, direction));
             dataView.Refresh();
         }
+
+        private void CMenu_close_button_Click(object sender, RoutedEventArgs e)
+        {
+            MediaPlayer.Play();
+        }
+
+        private void CMenu_open_button_Click(object sender, RoutedEventArgs e)
+        {
+            MediaPlayer.Pause();
+        }
     }
 }
