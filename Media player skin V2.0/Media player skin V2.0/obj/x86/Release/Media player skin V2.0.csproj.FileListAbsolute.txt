@@ -1,0 +1,22 @@
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Release\Media player skin V2.0.exe
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Release\Media player skin V2.0.pdb
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Release\policy.2.0.taglib-sharp.dll
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Release\taglib-sharp.dll
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Release\policy.2.0.taglib-sharp.config
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\Media player skin V2.0.csprojResolveAssemblyReference.cache
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\MainWindow.baml
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\Media player dictionary.baml
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\App.baml
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\LibraryControl.g.cs
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\MainWindow.g.cs
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\App.g.cs
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\Media player skin V2.0_MarkupCompile.cache
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\Media player skin V2.0_MarkupCompile.lref
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\LibraryControl.baml
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\Media player skin V2.0.g.resources
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\Media_player_skin_V2._0.Properties.Resources.resources
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\Media_player_skin_V2._0.rename.resources
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\Media player skin V2.0.csproj.GenerateResource.Cache
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\Media player skin V2.0.exe
+C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Release\Media player skin V2.0.pdb

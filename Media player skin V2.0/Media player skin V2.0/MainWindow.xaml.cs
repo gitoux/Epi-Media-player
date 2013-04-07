@@ -280,6 +280,7 @@ namespace Media_player_skin_V2._0
             listViewMedia.View = grid.gridPicture;
             listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia => typeMedia.type == eMediaType.IMAGE);
             Sort("title", ListSortDirection.Ascending);
+            this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
         }
 
         private void MusicTree_Selected(object sender, RoutedEventArgs e)
@@ -291,6 +292,7 @@ namespace Media_player_skin_V2._0
                 listViewMedia.View = grid.gridMusic;
                 listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia => typeMedia.type == eMediaType.MUSIC);
                 Sort("album", ListSortDirection.Ascending);
+                this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
             }
         }
 
@@ -299,6 +301,7 @@ namespace Media_player_skin_V2._0
             listViewMedia.View = grid.gridVideo;
             listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia => typeMedia.type == eMediaType.VIDEO);
             Sort("title", ListSortDirection.Ascending);
+            this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
         }
 
         private void ArtistTree_Selected(object sender, RoutedEventArgs e)
@@ -313,6 +316,7 @@ namespace Media_player_skin_V2._0
             }
             listArtist.Sort();
             listViewMedia.ItemsSource = listArtist;
+            this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
         }
 
         private void AlbumTree_Selected(object sender, RoutedEventArgs e)
@@ -327,6 +331,7 @@ namespace Media_player_skin_V2._0
             }
             listAlbum.Sort();
             listViewMedia.ItemsSource = listAlbum;
+            this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
         }
 
         private void GenreTree_Selected(object sender, RoutedEventArgs e)
@@ -341,6 +346,7 @@ namespace Media_player_skin_V2._0
             }
             listGenre.Sort();
             listViewMedia.ItemsSource = listGenre;
+            this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
         }
 
         private void listViewMedia_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -356,6 +362,7 @@ namespace Media_player_skin_V2._0
                     playlistManager.currentPlaylist = null;
                     MediaPlayer.Source = new Uri(playlistManager.currentMedia.path);
                     MediaPlayer.Play();
+                    this.ECMenu_close_BeginStoryboard3.Storyboard.Begin();
                 }
             }
             else if (listViewMedia.SelectedItem != null)

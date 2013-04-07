@@ -34,7 +34,6 @@ namespace Media_player_skin_V2._0
                         if (fs.Length > 0)
                         {
                             this.dir = xml.Deserialize(fs) as ObservableCollection<DirMedia>;
-                            refreshLibrary();
                         }
                     }
                     catch (Exception ex)
@@ -44,9 +43,12 @@ namespace Media_player_skin_V2._0
                 }
 
             }
-            if (dir == null)
+            if (dir == null || dir.Count < 3)
             {
-                this.dir = new ObservableCollection<DirMedia>();
+                if (this.dir != null)
+                    this.dir.Clear();
+                else
+                    this.dir = new ObservableCollection<DirMedia>();
                 this.dir.Add(new DirMedia(eMediaType.IMAGE));
                 this.dir.Add(new DirMedia(eMediaType.VIDEO));
                 this.dir.Add(new DirMedia(eMediaType.MUSIC));
@@ -54,6 +56,7 @@ namespace Media_player_skin_V2._0
             this.dir[0].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListPictureChanged);
             this.dir[1].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListVideoChanged);
             this.dir[2].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListMusicChanged);
+            refreshLibrary();
         }
 
         private void DirListPictureChanged(object sender, NotifyCollectionChangedEventArgs e)
