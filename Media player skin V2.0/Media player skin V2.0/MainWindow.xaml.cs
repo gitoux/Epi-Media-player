@@ -34,7 +34,7 @@ namespace Media_player_skin_V2._0
         private bool isDragging = false;
         private bool Loop = false;
         private Thickness marginSave;
-        private ObservableCollection<DirMedia> dir = null;
+        private Library lib = new Library();
         private LibraryControl libraryControlWindow = new LibraryControl();
         public ObservableCollection<Playlist> pl;
         public TreeViewItem tmpNode;
@@ -67,7 +67,6 @@ namespace Media_player_skin_V2._0
             timer.Start();
         }
 
-        // When the media playback is finished. Stop() the media to seek to media start.
         private void Element_MediaEnded(object sender, EventArgs e)
         {
             MediaPlayer.Stop();
@@ -108,10 +107,8 @@ namespace Media_player_skin_V2._0
         }
         private void buttonForwardClick(object sender, RoutedEventArgs e)
         {
-            //MediaPlayer.
             if (MediaPlayer.SpeedRatio < 24)
                 MediaPlayer.SpeedRatio += 2.0;
-            //MessageBox.Show(""+MediaPlayer.SpeedRatio);
             MediaPlayer.Play();
         }
         private void ChangeMediaVolume(object sender, RoutedPropertyChangedEventArgs<double> args)
@@ -172,37 +169,8 @@ namespace Media_player_skin_V2._0
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\library.xml"))
-            {
-                using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\library.xml", FileMode.OpenOrCreate))
-                {
-                    try
-                    {
-                        XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<DirMedia>));
-                        if (fs.Length > 0)
-                        {
-                            dir = xml.Deserialize(fs) as ObservableCollection<DirMedia>;
-                            refreshLibrary();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-
-            }
-            if (dir == null)
-            {
-                dir = new ObservableCollection<DirMedia>();
-                dir.Add(new DirMedia(eMediaType.IMAGE));
-                dir.Add(new DirMedia(eMediaType.VIDEO));
-                dir.Add(new DirMedia(eMediaType.MUSIC));
-            }
-            dir[0].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListPictureChanged);
-            dir[1].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListVideoChanged);
-            dir[2].directories.CollectionChanged += new NotifyCollectionChangedEventHandler(DirListMusicChanged);
-            this.libraryControlWindow.listDir = dir;
+            lib.initLibrary();
+            this.libraryControlWindow.listDir = lib.dir;
             Sound_settings.ValueChanged += ChangeMediaVolume;
 
             using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlist.xml", FileMode.OpenOrCreate))
@@ -217,7 +185,7 @@ namespace Media_player_skin_V2._0
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("The file for playlist has been corrupted. New playlist file has been created");
+                    MessageBox.Show("Le fichier de playist est corrompue. Un nouveau fichier a été créé.");
                     pl = new ObservableCollection<Playlist>();
                 }
             }
@@ -323,12 +291,12 @@ namespace Media_player_skin_V2._0
         {
             if (Menu_listbox.SelectedItem == null)
             {
-                MessageBox.Show("Selectionnez un fichier");
+                MessageBox.Show("Sélectionnez un fichier.");
                 return;
             }
             if (treePl.SelectedItem == null)
             {
-                MessageBox.Show("Selectionnez une playlist");
+                MessageBox.Show("Sélectionnez une playlist.");
                 return;
             }
             else
@@ -362,7 +330,7 @@ namespace Media_player_skin_V2._0
                         }
                 }
                 else
-                    MessageBox.Show("Selectionnez une playlist");
+                    MessageBox.Show("Sélectionnez une playlist.");
             }
         }
 
@@ -370,7 +338,7 @@ namespace Media_player_skin_V2._0
         {
             if (treePl.SelectedItem == null)
             {
-                MessageBox.Show("Selectionnez un media");
+                MessageBox.Show("Sélectionnez un média.");
                 return;
             }
             else
@@ -400,7 +368,7 @@ namespace Media_player_skin_V2._0
                         }
                 }
                 else
-                    MessageBox.Show("Select a song please");
+                    MessageBox.Show("Veuillez selectionner un média.");
             }
         }
 
@@ -430,7 +398,7 @@ namespace Media_player_skin_V2._0
         {
             if (treePl.SelectedItem == null)
             {
-                MessageBox.Show("Selectionnez une Playlist");
+                MessageBox.Show("Sélectionnez une playlist.");
                 return;
             }
             else
@@ -450,14 +418,13 @@ namespace Media_player_skin_V2._0
                         return;
                     }
                 }
-                MessageBox.Show("Selectionnez une Playlist");
+                MessageBox.Show("Selectionnez une playlist.");
             }
         }
 
         private void Loop_button_Click(object sender, RoutedEventArgs e)
         {
             Loop = !Loop;
-            MessageBox.Show((Loop ? "Loop is true" : "Loop is false"));
         }
 
         private void Next_button_Click(object sender, RoutedEventArgs e)
@@ -496,9 +463,8 @@ namespace Media_player_skin_V2._0
         private void PictureTree_Selected(object sender, RoutedEventArgs e)
         {
             listViewMedia.View = grid.gridPicture;
-            ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia => typeMedia.type == eMediaType.IMAGE));
-            view.SortDescriptions.Add(new SortDescription("title", ListSortDirection.Ascending));
-            listViewMedia.ItemsSource = view;
+            listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia => typeMedia.type == eMediaType.IMAGE);
+            Sort("title", ListSortDirection.Ascending);
         }
 
         private void MusicTree_Selected(object sender, RoutedEventArgs e)
@@ -508,18 +474,16 @@ namespace Media_player_skin_V2._0
             if ((String)selected.Header == "Music")
             {
                 listViewMedia.View = grid.gridMusic;
-                ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia => typeMedia.type == eMediaType.MUSIC));
-                view.SortDescriptions.Add(new SortDescription("album", ListSortDirection.Ascending));
-                listViewMedia.ItemsSource = view;
+                listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia => typeMedia.type == eMediaType.MUSIC);
+                Sort("album", ListSortDirection.Ascending);
             }
         }
 
         private void VideoTree_Selected(object sender, RoutedEventArgs e)
         {
             listViewMedia.View = grid.gridVideo;
-            ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia => typeMedia.type == eMediaType.VIDEO));
-            view.SortDescriptions.Add(new SortDescription("title", ListSortDirection.Ascending));
-            listViewMedia.ItemsSource = view;
+            listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia => typeMedia.type == eMediaType.VIDEO);
+            Sort("title", ListSortDirection.Ascending);
         }
 
         private void ArtistTree_Selected(object sender, RoutedEventArgs e)
@@ -527,7 +491,7 @@ namespace Media_player_skin_V2._0
             List<String> listArtist = new List<String>();
 
             listViewMedia.View = grid.gridArtist;
-            foreach (Media m in listMedia)
+            foreach (Media m in lib.listMedia)
             {
                 if (!listArtist.Contains(m.artist))
                     listArtist.Add(m.artist);
@@ -541,7 +505,7 @@ namespace Media_player_skin_V2._0
             List<String> listAlbum = new List<String>();
 
             listViewMedia.View = grid.gridAlbum;
-            foreach (Media m in listMedia)
+            foreach (Media m in lib.listMedia)
             {
                 if (!listAlbum.Contains(m.album))
                     listAlbum.Add(m.album);
@@ -555,7 +519,7 @@ namespace Media_player_skin_V2._0
             List<String> listGenre = new List<String>();
 
             listViewMedia.View = grid.gridGenre;
-            foreach (Media m in listMedia)
+            foreach (Media m in lib.listMedia)
             {
                 if (!listGenre.Contains(m.genre))
                     listGenre.Add(m.genre);
@@ -587,32 +551,29 @@ namespace Media_player_skin_V2._0
                 if (property == "Album")
                 {
                     listViewMedia.View = grid.gridMusic;
-                    ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia =>
-                        typeMedia.type == eMediaType.MUSIC && typeMedia.album == element));
-                    view.SortDescriptions.Add(new SortDescription("title", ListSortDirection.Ascending));
-                    listViewMedia.ItemsSource = view;
+                    listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia =>
+                           typeMedia.type == eMediaType.MUSIC && typeMedia.album == element);
+                    Sort("title", ListSortDirection.Ascending);
                 }
                 else if (property == "Artist")
                 {
                     listViewMedia.View = grid.gridMusic;
-                    ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia =>
-                        typeMedia.type == eMediaType.MUSIC && typeMedia.artist == element));
-                    view.SortDescriptions.Add(new SortDescription("title", ListSortDirection.Ascending));
-                    listViewMedia.ItemsSource = view;
+                    listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia =>
+                        typeMedia.type == eMediaType.MUSIC && typeMedia.artist == element);
+                    Sort("title", ListSortDirection.Ascending);
                 }
                 else
                 {
                     listViewMedia.View = grid.gridMusic;
-                    ICollectionView view = CollectionViewSource.GetDefaultView(listMedia.Where(typeMedia =>
-                        typeMedia.type == eMediaType.MUSIC && typeMedia.genre == element));
-                    view.SortDescriptions.Add(new SortDescription("title", ListSortDirection.Ascending));
-                    listViewMedia.ItemsSource = view;
+                    listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia =>
+                        typeMedia.type == eMediaType.MUSIC && typeMedia.genre == element);
+                    Sort("title", ListSortDirection.Ascending);
                 }
             }
         }
 
-        GridViewColumnHeader _lastHeaderClicked = null;
-        ListSortDirection _lastDirection = ListSortDirection.Ascending;
+        GridViewColumnHeader lastHeaderClicked = null;
+        ListSortDirection lastDirection = ListSortDirection.Ascending;
 
         private void listViewMedia_Click(object sender, RoutedEventArgs e)
         {
@@ -624,29 +585,21 @@ namespace Media_player_skin_V2._0
             {
                 if (headerClicked.Role != GridViewColumnHeaderRole.Padding)
                 {
-                    if (headerClicked != _lastHeaderClicked)
-                    {
+                    if (headerClicked != lastHeaderClicked)
                         direction = ListSortDirection.Ascending;
-                    }
                     else
                     {
-                        if (_lastDirection == ListSortDirection.Ascending)
-                        {
+                        if (lastDirection == ListSortDirection.Ascending)
                             direction = ListSortDirection.Descending;
-                        }
                         else
-                        {
                             direction = ListSortDirection.Ascending;
-                        }
                     }
                     string header = headerClicked.Column.Header as string;
                     Sort(header.ToLower(), direction);
-                    if (_lastHeaderClicked != null && _lastHeaderClicked != headerClicked)
-                    {
-                        _lastHeaderClicked.Column.HeaderTemplate = null;
-                    }
-                    _lastHeaderClicked = headerClicked;
-                    _lastDirection = direction;
+                    if (lastHeaderClicked != null && lastHeaderClicked != headerClicked)
+                        lastHeaderClicked.Column.HeaderTemplate = null;
+                    lastHeaderClicked = headerClicked;
+                    lastDirection = direction;
                 }
             }
         }

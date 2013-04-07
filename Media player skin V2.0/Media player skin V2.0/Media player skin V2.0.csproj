@@ -67,6 +67,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="GridViewer.cs" />
+    <Compile Include="Library.cs" />
+    <Compile Include="Playlist.cs" />
     <Compile Include="rename.cs">
       <SubType>Form</SubType>
     </Compile>

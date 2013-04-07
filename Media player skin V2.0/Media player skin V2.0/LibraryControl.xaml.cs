@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Forms;
 using System.IO;
 using System.ComponentModel;
+using System.Xml.Serialization;
 
 namespace Media_player_skin_V2._0
 {
@@ -57,7 +58,7 @@ namespace Media_player_skin_V2._0
             type = typeMedia;
         }
     }
-
+    
     public partial class LibraryControl : Window
     {
         public bool closeWindow { get; set; }
@@ -81,7 +82,7 @@ namespace Media_player_skin_V2._0
         {
             eMediaType choosenType = eMediaType.NONE;
             TreeViewItem tmp = LibraryPath.SelectedItem as TreeViewItem;
-            //PictureTree.
+
             if (tmp != null)
             {
                 string str = tmp.Header as string;
@@ -94,7 +95,7 @@ namespace Media_player_skin_V2._0
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("Not a type of library folder choosen.");
+                System.Windows.Forms.MessageBox.Show("Choisissez un type de librairie avant d'ajouter un dossier.");
                 return;
             }
             FolderBrowserDialog fbd = new FolderBrowserDialog();
@@ -111,7 +112,7 @@ namespace Media_player_skin_V2._0
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show("Directory cannot be a library dir : " + ex.Message);
+                    System.Windows.Forms.MessageBox.Show("Ce dossier ne peut être un dossier de librairie : " + ex.Message);
                     return;
                 }
                 foreach (DirMedia dmTmp in listDir)
@@ -156,7 +157,7 @@ namespace Media_player_skin_V2._0
                     }
                 }
                 else
-                    System.Windows.Forms.MessageBox.Show("Cannot delete a category !");
+                    System.Windows.Forms.MessageBox.Show("Vous ne pouvez pas supprimer une catégorie !");
             }
         }
 
