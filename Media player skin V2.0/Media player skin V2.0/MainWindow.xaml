@@ -117,6 +117,9 @@
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Loop_disable_button">
         	<BeginStoryboard x:Name="ELoop_disable_BeginStoryboard" Storyboard="{StaticResource ELoop_disable}"/>
         </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Play_button">
+        	<BeginStoryboard x:Name="ECMenu_close_BeginStoryboard3" Storyboard="{StaticResource ECMenu_close}"/>
+        </EventTrigger>
     </Window.Triggers>
     <Grid x:Name="Global_grid" Background="White" Margin="0">
         <Grid x:Name="Playlist_menu_toolbar" HorizontalAlignment="Left" Width="197" Background="White">
