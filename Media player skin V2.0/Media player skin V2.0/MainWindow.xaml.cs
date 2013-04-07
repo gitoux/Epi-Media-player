@@ -57,7 +57,6 @@ namespace Media_player_skin_V2._0
             playlistManager = new Playlists();
             playlistManager.wpfListMedia = listViewMedia;
             playlistManager.wpfTree = treePl;
-            playlistManager.currentMedia = currentMedia;
             playlistManager.player = MediaPlayer;
             playlistManager.initPlaylists();
         }
@@ -77,7 +76,7 @@ namespace Media_player_skin_V2._0
                 Time_video.Maximum = ts.TotalSeconds;
                 Time_video.SmallChange = 1;
             }
-            PlayingMedia.Text = currentMedia.name;
+            PlayingMedia.Text = playlistManager.currentMedia.name;
             timer.Start();
         }
 
@@ -87,15 +86,15 @@ namespace Media_player_skin_V2._0
             MediaPlayer.Close();
             Time_video.Value = 0.0;
             MediaPlayer.Position = TimeSpan.FromSeconds(Time_video.Value);
-            if (currentPlaylist != null)
+            if (playlistManager.currentPlaylist != null)
             {
-                if (Loop == true && MediaNum + 1 == currentPlaylist.List.Count)
+                if (Loop == true && MediaNum + 1 == playlistManager.currentPlaylist.List.Count)
                     MediaNum = -1;
-                if (MediaNum + 1 < currentPlaylist.List.Count)
+                if (MediaNum + 1 < playlistManager.currentPlaylist.List.Count)
                 {
                     MediaNum += 1;
-                    currentMedia = currentPlaylist.List[MediaNum];
-                    MediaPlayer.Source = new Uri(currentMedia.path);
+                    playlistManager.currentMedia = playlistManager.currentPlaylist.List[MediaNum];
+                    MediaPlayer.Source = new Uri(playlistManager.currentMedia.path);
                     MediaPlayer.Play();
                 }
             }
@@ -199,7 +198,7 @@ namespace Media_player_skin_V2._0
 
         private void Add_media_button_Click(object sender, RoutedEventArgs e)
         {
-            if (Menu_listbox.SelectedItem == null)
+            if (Menu_library.SelectedItem == null)
             {
                 MessageBox.Show("Sélectionnez un fichier.");
                 return;
@@ -249,33 +248,33 @@ namespace Media_player_skin_V2._0
 
         private void Next_button_Click(object sender, RoutedEventArgs e)
         {
-            if (currentPlaylist != null && MediaNum + 1 < currentPlaylist.List.Count)
+            if (playlistManager.currentPlaylist != null && MediaNum + 1 < playlistManager.currentPlaylist.List.Count)
             {
                 MediaPlayer.Stop();
                 MediaPlayer.Close();
                 MediaNum += 1;
-                currentMedia = currentPlaylist.List[MediaNum];
-                MediaPlayer.Source = new Uri(currentMedia.path);
+                playlistManager.currentMedia = playlistManager.currentPlaylist.List[MediaNum];
+                MediaPlayer.Source = new Uri(playlistManager.currentMedia.path);
                 MediaPlayer.Play();
             }
-            else if (currentPlaylist != null && MediaNum + 1 == currentPlaylist.List.Count && Loop)
+            else if (playlistManager.currentPlaylist != null && MediaNum + 1 == playlistManager.currentPlaylist.List.Count && Loop)
             {
                 MediaNum = 0;
-                currentMedia = currentPlaylist.List[MediaNum];
-                MediaPlayer.Source = new Uri(currentMedia.path);
+                playlistManager.currentMedia = playlistManager.currentPlaylist.List[MediaNum];
+                MediaPlayer.Source = new Uri(playlistManager.currentMedia.path);
                 MediaPlayer.Play();
             }
         }
 
         private void Back_button_Click(object sender, RoutedEventArgs e)
         {
-            if (currentPlaylist != null && MediaNum - 1 > -1)
+            if (playlistManager.currentPlaylist != null && MediaNum - 1 > -1)
             {
                 MediaPlayer.Stop();
                 MediaPlayer.Close();
                 MediaNum -= 1;
-                currentMedia = currentPlaylist.List[MediaNum];
-                MediaPlayer.Source = new Uri(currentMedia.path);
+                playlistManager.currentMedia = playlistManager.currentPlaylist.List[MediaNum];
+                MediaPlayer.Source = new Uri(playlistManager.currentMedia.path);
                 MediaPlayer.Play();
             }
         }
@@ -289,7 +288,7 @@ namespace Media_player_skin_V2._0
 
         private void MusicTree_Selected(object sender, RoutedEventArgs e)
         {
-            TreeViewItem selected = Menu_listbox.SelectedItem as TreeViewItem;
+            TreeViewItem selected = Menu_library.SelectedItem as TreeViewItem;
 
             if ((String)selected.Header == "Music")
             {
@@ -357,16 +356,16 @@ namespace Media_player_skin_V2._0
                 {
                     MediaPlayer.Stop();
                     MediaPlayer.SpeedRatio = 1.0;
-                    currentMedia = mediaSelected;
-                    currentPlaylist = null;
-                    MediaPlayer.Source = new Uri(currentMedia.path);
+                    playlistManager.currentMedia = mediaSelected;
+                    playlistManager.currentPlaylist = null;
+                    MediaPlayer.Source = new Uri(playlistManager.currentMedia.path);
                     MediaPlayer.Play();
                 }
             }
             else if (listViewMedia.SelectedItem != null)
             {
                 String element = listViewMedia.SelectedItem.ToString();
-                TreeViewItem tvi = Menu_listbox.SelectedItem as TreeViewItem;
+                TreeViewItem tvi = Menu_library.SelectedItem as TreeViewItem;
                 String property = tvi.Header as String;
                 if (property == "Album")
                 {

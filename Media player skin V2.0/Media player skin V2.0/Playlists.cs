@@ -20,7 +20,8 @@ namespace Media_player_skin_V2._0
         public TreeView wpfTree;
         public ListView wpfListMedia;
         public TreeViewItem tmpNode;
-        public Media currentMedia;
+        public Media currentMedia = null;
+        public Playlist currentPlaylist = null;
         public MediaElement player;
 
         public void initPlaylists()
@@ -80,15 +81,12 @@ namespace Media_player_skin_V2._0
 
         public void playOrNotSong(object sender, EventArgs e)
         {
-          
             TreeViewItem tmpItem = (TreeViewItem)sender;
             TreeViewItem parent = tmpItem.Parent as TreeViewItem;
             string sParent = parent.Header.ToString();
-            MessageBox.Show("WTF BEFORE");
             for (int i = 0; i < pl.Count; i++)
                     if (pl[i].Name == sParent)
                     {
-                        MessageBox.Show("WTF SI PARENT");
                         for (int j = 0; j < pl[i].List.Count; j++)
                         {
                             if (pl[i].List[j].name == tmpItem.Header.ToString())
@@ -96,7 +94,7 @@ namespace Media_player_skin_V2._0
                                 player.Stop();
                                 player.SpeedRatio = 1.0;
                                 currentMedia = pl[i].List[j];
-                                MessageBox.Show("ON VA DEVOIR LANCER = " + currentMedia.path);
+                                currentPlaylist = pl[i];
                                 player.Source = new Uri(currentMedia.path);
                                 player.Play();
                                 break;

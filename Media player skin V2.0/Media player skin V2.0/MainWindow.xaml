@@ -76,7 +76,7 @@
     </Window.Triggers>
     <Grid x:Name="Global_grid" Background="White" Margin="0">
         <Grid x:Name="Playlist_menu_toolbar" HorizontalAlignment="Left" Width="197" Background="White">
-            <TreeView x:Name="Menu_listbox" Margin="-0.5,62.5,0.5,314.5" Background="Black" Foreground="White">
+            <TreeView x:Name="Menu_library" Margin="-0.5,62.5,0.5,314.5" Background="Black" Foreground="White">
                 <TreeViewItem Header="Pictures" x:Name="PictureTree" x:FieldModifier="private" Foreground="White" Selected="PictureTree_Selected" />
                 <TreeViewItem Header="Video" x:Name="VideoTree" x:FieldModifier="private" Foreground="White" Selected="VideoTree_Selected" />
                 <TreeViewItem Header="Music" x:Name="MusicTree" x:FieldModifier="private" Foreground="White" Selected="MusicTree_Selected" >
