@@ -15,7 +15,7 @@ namespace Media_player_skin_V2._0
         public ObservableCollection<Media> listMedia = new ObservableCollection<Media>();
         private string[] extensionImg = { "*.jpg", "*.bmp", "*.png" };
         private string[] extensionVideo = { "*.mp4", "*.avi", "*.wmv", "*.mkv" };
-        private string[] extensionMusic = { "*.mp3", "*.ogg" };
+        private string[] extensionMusic = { "*.mp3", "*.ogg", "*.m4a" };
 
         public Library()
         {
