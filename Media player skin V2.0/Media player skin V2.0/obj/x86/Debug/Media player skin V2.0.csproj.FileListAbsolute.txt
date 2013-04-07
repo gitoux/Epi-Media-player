@@ -134,7 +134,6 @@ C:\Users\Tchiko\Desktop\Media player skin V2.0\Media player skin V2.0\obj\x86\De
 C:\Users\Tchiko\Desktop\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.rename.resources
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\Media player skin V2.0.exe
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\Media player skin V2.0.pdb
-C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\MainWindow.baml
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player dictionary.baml
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\App.baml
@@ -148,10 +147,6 @@ C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player ski
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.g.resources
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.Properties.Resources.resources
 C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.rename.resources
-C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.read.0.tlog
-C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.read.1.tlog
-C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.0.tlog
-C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Pica_d\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.rename.resources
 C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\policy.2.0.taglib-sharp.dll
 C:\Users\Nyda\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\taglib-sharp.dll
@@ -209,3 +204,8 @@ C:\Users\Tchiko\Desktop\My-Work\Media player skin V2.0\Media player skin V2.0\ob
 C:\Users\Tchiko\Desktop\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.Properties.Resources.resources
 C:\Users\Tchiko\Desktop\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media_player_skin_V2._0.rename.resources
 C:\Users\Tchiko\Desktop\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.csproj.GenerateResource.Cache
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\policy.2.0.taglib-sharp.dll
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\taglib-sharp.dll
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\bin\Debug\policy.2.0.taglib-sharp.config
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.csprojResolveAssemblyReference.cache
+C:\Users\Tchiko\Documents\GitHub\My-Work\Media player skin V2.0\Media player skin V2.0\obj\x86\Debug\Media player skin V2.0.csproj.GenerateResource.Cache

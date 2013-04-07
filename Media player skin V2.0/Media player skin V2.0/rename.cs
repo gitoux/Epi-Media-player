@@ -71,6 +71,7 @@ namespace Media_player_skin_V2._0
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
+            this.tmpManager.openBoxRename = false;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
