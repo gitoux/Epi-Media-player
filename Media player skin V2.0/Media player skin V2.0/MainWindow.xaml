@@ -54,6 +54,38 @@
         		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
         	</ObjectAnimationUsingKeyFrames>
         </Storyboard>
+        <Storyboard x:Key="ESound_disable">
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Sound_on">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Sound_off">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="ESound_enable">
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Sound_off">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Sound_on">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="ELoop_enable">
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Loop_enable_button">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Loop_disable_button">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="ELoop_disable">
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Loop_disable_button">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Loop_enable_button">
+        		<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+        	</ObjectAnimationUsingKeyFrames>
+        </Storyboard>
 	</Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Menu_close_button">
@@ -72,6 +104,18 @@
         </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="CMenu_close_button">
         	<BeginStoryboard x:Name="ECMenu_close_BeginStoryboard" Storyboard="{StaticResource ECMenu_close}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Sound_on">
+        	<BeginStoryboard x:Name="ESound_disable_BeginStoryboard" Storyboard="{StaticResource ESound_disable}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Sound_off">
+        	<BeginStoryboard x:Name="ESound_enable_BeginStoryboard" Storyboard="{StaticResource ESound_enable}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Loop_enable_button">
+        	<BeginStoryboard x:Name="ELoop_enable_BeginStoryboard" Storyboard="{StaticResource ELoop_enable}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Loop_disable_button">
+        	<BeginStoryboard x:Name="ELoop_disable_BeginStoryboard" Storyboard="{StaticResource ELoop_disable}"/>
         </EventTrigger>
     </Window.Triggers>
     <Grid x:Name="Global_grid" Background="White" Margin="0">
@@ -117,15 +161,15 @@
                 <Button x:Name="Next_button" Height="35" MaxWidth="35" MaxHeight="35" Margin="305,0,0,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TNext_button}" VerticalAlignment="Bottom" d:LayoutOverrides="Height" RenderTransformOrigin="1.6,0.686" Width="35" HorizontalAlignment="Left" Click="Next_button_Click"/>
                 <Button x:Name="Back_button" HorizontalAlignment="Left" Height="35" MaxWidth="35" MaxHeight="35" Margin="31,0,0,15" MinWidth="35" MinHeight="35" Style="{DynamicResource TBack_button}" Width="35" VerticalAlignment="Bottom" RenderTransformOrigin="1.6,0.686" d:LayoutOverrides="Height" Click="Back_button_Click"/>
                 <Button x:Name="Stop_button" HorizontalAlignment="Left" Height="45" MaxWidth="45" MaxHeight="45" Margin="114,50,0,15" MinWidth="45" MinHeight="45" Style="{DynamicResource TStop_button}" Width="45" RenderTransformOrigin="1.6,0.686" Click="buttonStopClick"/>
-                <Button x:Name="Loop_button" HorizontalAlignment="Right" Height="40" MaxWidth="40" MaxHeight="40" Margin="0,0,262,15" MinWidth="40" MinHeight="40" Style="{DynamicResource TLoop_button}" Width="40" VerticalAlignment="Bottom" RenderTransformOrigin="1.6,0.686" Grid.Column="2" Click="Loop_button_Click"/>
-                <Button x:Name="Random_button" Height="40" MaxWidth="40" MaxHeight="40" Margin="0,0,218,15" MinWidth="40" MinHeight="40" Style="{DynamicResource TRandom_button}" VerticalAlignment="Bottom" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Right" Width="40" Grid.Column="2"/>
-                <Button x:Name="Full_screen_button" Height="40" MaxWidth="40" MaxHeight="40" Margin="0,0,174,15" MinWidth="40" MinHeight="40" Style="{DynamicResource TFull_screen_button}" VerticalAlignment="Bottom" RenderTransformOrigin="1.6,0.686" Grid.Column="2" HorizontalAlignment="Right" Width="40" Click="mediaPlayer_ButtonFullScreen"/>
-                <Button x:Name="Sound_off" Height="35" MaxWidth="35" MaxHeight="35" Margin="0,0,108,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TOff_button}" VerticalAlignment="Bottom" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Right" Width="35" d:LayoutOverrides="Height" Grid.Column="2" Click="Sound_off_Click"/>
-                <Button x:Name="Sound_on" Height="35" MaxWidth="35" MaxHeight="35" Margin="0,0,8,8" MinWidth="35" MinHeight="35" Style="{DynamicResource TOn_button}" VerticalAlignment="Bottom" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Right" Width="35" d:LayoutOverrides="Height" Grid.Column="2" Click="Sound_on_Click"/>
-                <Slider x:Name="Sound_settings" HorizontalAlignment="Right" Margin="0,35,8,47" Width="135" Grid.Column="2" Minimum="0" Maximum="1" Value="0.5"/>
+                <Button x:Name="Loop_enable_button" HorizontalAlignment="Right" Height="40" MaxWidth="40" MaxHeight="40" Margin="0,0,262,15" MinWidth="40" MinHeight="40" Style="{DynamicResource TLoop_enable_button}" Width="40" VerticalAlignment="Bottom" RenderTransformOrigin="1.6,0.686" Grid.Column="2" Click="Loop_button_Click"/>
+                <Button x:Name="Full_screen_button" MaxWidth="40" MaxHeight="40" Margin="0,0,218,15" MinWidth="40" MinHeight="40" Style="{DynamicResource TFull_screen_button}" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Right" Width="40" Click="mediaPlayer_ButtonFullScreen" d:LayoutOverrides="GridBox" Height="40" VerticalAlignment="Bottom"/>
+                <Button x:Name="Sound_off" Height="35" MaxWidth="35" MaxHeight="35" Margin="0,0,147,20" MinWidth="35" MinHeight="35" Style="{DynamicResource TOff_button}" VerticalAlignment="Bottom" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Right" Width="35" d:LayoutOverrides="Height, GridBox" Click="Sound_off_Click" Visibility="Hidden"/>
+                <Button x:Name="Sound_on" Height="35" MaxWidth="35" MaxHeight="35" Margin="0,0,147,20" MinWidth="35" MinHeight="35" Style="{DynamicResource TOn_button}" VerticalAlignment="Bottom" RenderTransformOrigin="1.6,0.686" HorizontalAlignment="Right" Width="35" d:LayoutOverrides="Height, GridBox" Click="Sound_on_Click"/>
+                <Slider x:Name="Sound_settings" HorizontalAlignment="Right" Margin="0,0,8,22" Width="135" Minimum="0" Maximum="1" Value="0.5" d:LayoutOverrides="GridBox" Height="28" VerticalAlignment="Bottom"/>
                 <Button x:Name="Menu_close_button" MaxWidth="80" MaxHeight="40" Margin="376.182,0,327.818,15" MinWidth="80" MinHeight="40" Style="{DynamicResource TMenu_close_button}" RenderTransformOrigin="1.6,0.686" Height="40" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox"/>
                 <Button x:Name="Menu_open_button" MaxWidth="80" MaxHeight="40" Margin="376.182,0,327.818,15" MinWidth="80" MinHeight="40" Style="{DynamicResource TMenu_open_button}" RenderTransformOrigin="1.6,0.686" Height="40" VerticalAlignment="Bottom" d:LayoutOverrides="GridBox" Visibility="Hidden"/>
-                <TextBlock Height="17" HorizontalAlignment="Left" Margin="372,33,0,0" x:Name="PlayingMedia" Text="Playing Media" VerticalAlignment="Top" Width="229" Foreground="White"/>
+                <TextBlock Height="17" HorizontalAlignment="Left" Margin="305,31,0,0" x:Name="PlayingMedia" Text="Titre du média" VerticalAlignment="Top" Width="229" Foreground="White" FontWeight="Bold"/>
+                <Button x:Name="Loop_disable_button" HorizontalAlignment="Right" Height="40" MaxWidth="40" MaxHeight="40" Margin="0,0,262,15" MinWidth="40" MinHeight="40" Style="{DynamicResource TLoop_disable_button}" Width="40" VerticalAlignment="Bottom" RenderTransformOrigin="1.6,0.686" Click="Loop_button_Click" d:LayoutOverrides="GridBox" Visibility="Hidden"/>
             </Grid>
             <Grid x:Name="Video_Grid" Margin="0,0,0,114" Background="Black">
                 <MediaElement x:Name="MediaPlayer" LoadedBehavior="Manual"

@@ -391,7 +391,7 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<Style x:Key="TLoop_button" TargetType="{x:Type Button}">
+	<Style x:Key="TLoop_enable_button" TargetType="{x:Type Button}">
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="{x:Type Button}">
@@ -992,6 +992,45 @@
 						</Rectangle>
 						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content=""/>
 						<Image Margin="3,6,2,6" Source="menu close.png" Stretch="Fill" RenderTransformOrigin="0.433,0.733"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsFocused" Value="True"/>
+						<Trigger Property="IsDefaulted" Value="True"/>
+						<Trigger Property="IsMouseOver" Value="True"/>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="Fill" TargetName="Border_1" Value="Black"/>
+							<Setter Property="Fill" TargetName="Border_2">
+								<Setter.Value>
+									<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
+										<GradientStop Color="White" Offset="0.217"/>
+										<GradientStop Color="White" Offset="0.775"/>
+									</LinearGradientBrush>
+								</Setter.Value>
+							</Setter>
+							<Setter Property="Opacity" TargetName="Border_2" Value="0.75"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False"/>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="TLoop_disable_button" TargetType="{x:Type Button}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid>
+						<Rectangle x:Name="Border_1" Stroke="Black" Fill="Black" RadiusX="5" RadiusY="5"/>
+						<Rectangle x:Name="Border_2" Margin="3" Opacity="0.85" RadiusX="5" RadiusY="5">
+							<Rectangle.Fill>
+								<LinearGradientBrush EndPoint="-0.053,-0.019" MappingMode="RelativeToBoundingBox" StartPoint="0.756,0.88">
+									<GradientStop Color="#FF3D3D3D" Offset="0.217"/>
+									<GradientStop Color="White" Offset="0.775"/>
+								</LinearGradientBrush>
+							</Rectangle.Fill>
+						</Rectangle>
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content=""/>
+						<Image Source="loop_disable.png" Stretch="Fill" Margin="4"/>
 					</Grid>
 					<ControlTemplate.Triggers>
 						<Trigger Property="IsFocused" Value="True"/>

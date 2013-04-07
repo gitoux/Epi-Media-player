@@ -137,6 +137,7 @@
     <Resource Include="Fast_next.png" />
     <Resource Include="Full_Screen.png" />
     <Resource Include="loop.png" />
+    <Resource Include="loop_disable.png" />
     <Resource Include="menu close.png" />
     <Resource Include="menu open.png" />
     <Resource Include="Next.png" />
