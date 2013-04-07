@@ -73,7 +73,7 @@ namespace Media_player_skin_V2._0
             }
             else
             {
-                TimeSpan ts = TimeSpan.FromSeconds(5);
+                TimeSpan ts = TimeSpan.FromSeconds(10);
                 Time_video.Maximum = ts.TotalSeconds;
                 Time_video.SmallChange = 1;
             }
@@ -281,6 +281,8 @@ namespace Media_player_skin_V2._0
             listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia => typeMedia.type == eMediaType.IMAGE);
             Sort("title", ListSortDirection.Ascending);
             this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
+            if (playlistManager.currentMedia != null && playlistManager.currentMedia.type != eMediaType.MUSIC)
+                MediaPlayer.Pause();
         }
 
         private void MusicTree_Selected(object sender, RoutedEventArgs e)
@@ -293,6 +295,8 @@ namespace Media_player_skin_V2._0
                 listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia => typeMedia.type == eMediaType.MUSIC);
                 Sort("album", ListSortDirection.Ascending);
                 this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
+                if (playlistManager.currentMedia != null && playlistManager.currentMedia.type != eMediaType.MUSIC)
+                    MediaPlayer.Pause();
             }
         }
 
@@ -302,6 +306,8 @@ namespace Media_player_skin_V2._0
             listViewMedia.ItemsSource = lib.listMedia.Where(typeMedia => typeMedia.type == eMediaType.VIDEO);
             Sort("title", ListSortDirection.Ascending);
             this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
+            if (playlistManager.currentMedia != null && playlistManager.currentMedia.type != eMediaType.MUSIC)
+                MediaPlayer.Pause();
         }
 
         private void ArtistTree_Selected(object sender, RoutedEventArgs e)
@@ -317,6 +323,8 @@ namespace Media_player_skin_V2._0
             listArtist.Sort();
             listViewMedia.ItemsSource = listArtist;
             this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
+            if (playlistManager.currentMedia != null && playlistManager.currentMedia.type != eMediaType.MUSIC)
+                MediaPlayer.Pause();
         }
 
         private void AlbumTree_Selected(object sender, RoutedEventArgs e)
@@ -332,6 +340,8 @@ namespace Media_player_skin_V2._0
             listAlbum.Sort();
             listViewMedia.ItemsSource = listAlbum;
             this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
+            if (playlistManager.currentMedia != null && playlistManager.currentMedia.type != eMediaType.MUSIC)
+                MediaPlayer.Pause();
         }
 
         private void GenreTree_Selected(object sender, RoutedEventArgs e)
@@ -347,6 +357,8 @@ namespace Media_player_skin_V2._0
             listGenre.Sort();
             listViewMedia.ItemsSource = listGenre;
             this.ECMenu_open_BeginStoryboard.Storyboard.Begin();
+            if (playlistManager.currentMedia != null && playlistManager.currentMedia.type != eMediaType.MUSIC)
+                MediaPlayer.Pause();
         }
 
         private void listViewMedia_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -443,7 +455,8 @@ namespace Media_player_skin_V2._0
 
         private void CMenu_open_button_Click(object sender, RoutedEventArgs e)
         {
-            MediaPlayer.Pause();
+            if (playlistManager.currentMedia != null && playlistManager.currentMedia.type != eMediaType.MUSIC)
+                MediaPlayer.Pause();
         }
 
         private void Loop_disable_button_Click(object sender, RoutedEventArgs e)
@@ -454,6 +467,12 @@ namespace Media_player_skin_V2._0
         private void Loop_enable_button_Click(object sender, RoutedEventArgs e)
         {
             Loop = true;
+        }
+
+        private void MediaPlayer_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.ECMenu_close_BeginStoryboard3.Storyboard.Begin();
+            MediaPlayer.Play();
         }
     }
 }

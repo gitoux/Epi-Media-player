@@ -176,7 +176,7 @@
             </Grid>
             <Grid x:Name="Video_Grid" Margin="0,0,0,114" Background="Black">
                 <MediaElement x:Name="MediaPlayer" LoadedBehavior="Manual"
-                      Position="00:00:00" MediaOpened="Element_MediaOpened" MediaEnded="Element_MediaEnded" Grid.Column="1"/>
+                      Position="00:00:00" MediaOpened="Element_MediaOpened" MediaEnded="Element_MediaEnded" Grid.Column="1" MouseLeftButtonDown="MediaPlayer_MouseLeftButtonDown"/>
             </Grid>
             <Grid x:Name="Extented_Menu" Margin="0,0,147,114" Background="Black">
             	<ListView x:Name="listViewMedia" Background="Black" Foreground="White" MouseDoubleClick="listViewMedia_MouseDoubleClick" ButtonBase.Click="listViewMedia_Click" d:LayoutOverrides="GridBox"/>
