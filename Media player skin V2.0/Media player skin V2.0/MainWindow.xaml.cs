@@ -242,11 +242,6 @@ namespace Media_player_skin_V2._0
             }
         }
 
-        private void Loop_button_Click(object sender, RoutedEventArgs e)
-        {
-            Loop = !Loop;
-        }
-
         private void Next_button_Click(object sender, RoutedEventArgs e)
         {
             if (playlistManager.currentPlaylist != null && playlistManager.MediaNum + 1 < playlistManager.currentPlaylist.List.Count)
@@ -442,6 +437,16 @@ namespace Media_player_skin_V2._0
         private void CMenu_open_button_Click(object sender, RoutedEventArgs e)
         {
             MediaPlayer.Pause();
+        }
+
+        private void Loop_disable_button_Click(object sender, RoutedEventArgs e)
+        {
+            Loop = false;
+        }
+
+        private void Loop_enable_button_Click(object sender, RoutedEventArgs e)
+        {
+            Loop = true;
         }
     }
 }
