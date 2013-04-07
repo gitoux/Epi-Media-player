@@ -84,7 +84,6 @@ namespace Media_player_skin_V2._0
         private Media currentMedia = null;
         private Playlist currentPlaylist = null;
         private int MediaNum = 0;
-        int plIndex;
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {

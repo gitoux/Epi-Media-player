@@ -69,6 +69,7 @@
     <Compile Include="GridViewer.cs" />
     <Compile Include="Library.cs" />
     <Compile Include="Playlist.cs" />
+    <Compile Include="Playlists.cs" />
     <Compile Include="rename.cs">
       <SubType>Form</SubType>
     </Compile>

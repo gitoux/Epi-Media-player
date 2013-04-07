@@ -18,7 +18,7 @@ namespace Media_player_skin_V2._0
         public Playlist tmpPl;
         public TreeViewItem tmpNode;
         public int selectedIndex;
-        public ObservableCollection<Playlist> tmpOb;
+        public List<Playlist> tmpOb;
         public rename()
         {
             InitializeComponent();
@@ -49,9 +49,9 @@ namespace Media_player_skin_V2._0
                  }
              tmpPl.Name = sName;
              tmpNode.Header = sName;
-             using (var fs = new FileStream("playlist.xml", FileMode.Create))
+             using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlist.xml", FileMode.Create))
              {
-                 XmlSerializer xml = new XmlSerializer(typeof(ObservableCollection<Playlist>));
+                 XmlSerializer xml = new XmlSerializer(typeof(List<Playlist>));
                  xml.Serialize(fs, tmpOb);
              }
              this.Hide();
@@ -65,6 +65,11 @@ namespace Media_player_skin_V2._0
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
