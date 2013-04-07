@@ -13,7 +13,7 @@ using System.Windows.Media;
 
 namespace Media_player_skin_V2._0
 {
-    class Playlists
+    public class Playlists
     {
         public List<Playlist> pl;
         public int plIndex;
@@ -23,6 +23,7 @@ namespace Media_player_skin_V2._0
         public Media currentMedia = null;
         public Playlist currentPlaylist = null;
         public MediaElement player;
+        public bool openBoxRename;
 
         public void initPlaylists()
         {
@@ -106,8 +107,9 @@ namespace Media_player_skin_V2._0
 
         public void renamePlaylist(object sender, EventArgs e)
         {
+            if (this.openBoxRename == true)
+                return;
             TreeViewItem tmpItem = (TreeViewItem)sender;
-
             string sParent = tmpItem.Header.ToString();
             for (int i = 0; i < pl.Count; i++)
                 if (pl[i].Name == sParent)
@@ -117,6 +119,8 @@ namespace Media_player_skin_V2._0
                     input.tmpPl = pl[i];
                     input.selectedIndex = i;
                     input.tmpOb = pl;
+                    input.tmpManager = this;
+                    this.openBoxRename = true;
                     input.Show();
                     break;
                 }
@@ -188,6 +192,25 @@ namespace Media_player_skin_V2._0
 
         public void addNewPlaylist()
         {
+            bool stop = false;
+            bool goAhead = false;
+            for (int i = plIndex; stop != true; i++)
+            {  
+                for (int j = 0; j < pl.Count; j++)
+                {
+                    if (pl[j].Name == "Playlist" + i)
+                    {       
+                        goAhead = true;
+                        break;
+                    }
+                }
+                if (goAhead == false)
+                {
+                    stop = true;
+                    plIndex = i;
+                }
+                goAhead = false;
+           }
             pl.Add(new Playlist("Playlist" + plIndex));
             TreeViewItem Pltmp = new TreeViewItem();
             Pltmp.Header = "Playlist" + plIndex;

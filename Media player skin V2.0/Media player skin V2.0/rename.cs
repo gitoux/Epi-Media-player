@@ -19,6 +19,7 @@ namespace Media_player_skin_V2._0
         public TreeViewItem tmpNode;
         public int selectedIndex;
         public List<Playlist> tmpOb;
+        public Playlists tmpManager;
         public rename()
         {
             InitializeComponent();
@@ -38,7 +39,11 @@ namespace Media_player_skin_V2._0
                 MessageBox.Show("You put the same name");
                 return;
             }
-
+            if (sName.Length == 0)
+            {
+                MessageBox.Show("Enter a name please");
+                return;
+            }
              for (int j = 0; j < tmpOb.Count; j++)
                  {
                      if (j != selectedIndex && sName == tmpOb[j].Name)
@@ -55,6 +60,7 @@ namespace Media_player_skin_V2._0
                  xml.Serialize(fs, tmpOb);
              }
              this.Hide();
+             this.tmpManager.openBoxRename = false;
         }
 
         private void label1_Click(object sender, EventArgs e)

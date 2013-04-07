@@ -58,6 +58,7 @@ namespace Media_player_skin_V2._0
             playlistManager.wpfListMedia = listViewMedia;
             playlistManager.wpfTree = treePl;
             playlistManager.player = MediaPlayer;
+            playlistManager.openBoxRename = false;
             playlistManager.initPlaylists();
         }
 
