@@ -89,12 +89,12 @@ namespace Media_player_skin_V2._0
             MediaPlayer.Position = TimeSpan.FromSeconds(Time_video.Value);
             if (playlistManager.currentPlaylist != null)
             {
-                if (Loop == true && MediaNum + 1 == playlistManager.currentPlaylist.List.Count)
-                    MediaNum = -1;
-                if (MediaNum + 1 < playlistManager.currentPlaylist.List.Count)
+                if (Loop == true && playlistManager.MediaNum + 1 == playlistManager.currentPlaylist.List.Count)
+                    playlistManager.MediaNum = -1;
+                if (playlistManager.MediaNum + 1 < playlistManager.currentPlaylist.List.Count)
                 {
-                    MediaNum += 1;
-                    playlistManager.currentMedia = playlistManager.currentPlaylist.List[MediaNum];
+                    playlistManager.MediaNum += 1;
+                    playlistManager.currentMedia = playlistManager.currentPlaylist.List[playlistManager.MediaNum];
                     MediaPlayer.Source = new Uri(playlistManager.currentMedia.path);
                     MediaPlayer.Play();
                 }
@@ -249,19 +249,19 @@ namespace Media_player_skin_V2._0
 
         private void Next_button_Click(object sender, RoutedEventArgs e)
         {
-            if (playlistManager.currentPlaylist != null && MediaNum + 1 < playlistManager.currentPlaylist.List.Count)
+            if (playlistManager.currentPlaylist != null && playlistManager.MediaNum + 1 < playlistManager.currentPlaylist.List.Count)
             {
                 MediaPlayer.Stop();
                 MediaPlayer.Close();
-                MediaNum += 1;
-                playlistManager.currentMedia = playlistManager.currentPlaylist.List[MediaNum];
+                playlistManager.MediaNum += 1;
+                playlistManager.currentMedia = playlistManager.currentPlaylist.List[playlistManager.MediaNum];
                 MediaPlayer.Source = new Uri(playlistManager.currentMedia.path);
                 MediaPlayer.Play();
             }
-            else if (playlistManager.currentPlaylist != null && MediaNum + 1 == playlistManager.currentPlaylist.List.Count && Loop)
+            else if (playlistManager.currentPlaylist != null && playlistManager.MediaNum + 1 == playlistManager.currentPlaylist.List.Count && Loop)
             {
-                MediaNum = 0;
-                playlistManager.currentMedia = playlistManager.currentPlaylist.List[MediaNum];
+                playlistManager.MediaNum = 0;
+                playlistManager.currentMedia = playlistManager.currentPlaylist.List[playlistManager.MediaNum];
                 MediaPlayer.Source = new Uri(playlistManager.currentMedia.path);
                 MediaPlayer.Play();
             }
@@ -269,12 +269,12 @@ namespace Media_player_skin_V2._0
 
         private void Back_button_Click(object sender, RoutedEventArgs e)
         {
-            if (playlistManager.currentPlaylist != null && MediaNum - 1 > -1)
+            if (playlistManager.currentPlaylist != null && playlistManager.MediaNum - 1 > -1)
             {
                 MediaPlayer.Stop();
                 MediaPlayer.Close();
-                MediaNum -= 1;
-                playlistManager.currentMedia = playlistManager.currentPlaylist.List[MediaNum];
+                playlistManager.MediaNum -= 1;
+                playlistManager.currentMedia = playlistManager.currentPlaylist.List[playlistManager.MediaNum];
                 MediaPlayer.Source = new Uri(playlistManager.currentMedia.path);
                 MediaPlayer.Play();
             }
@@ -350,7 +350,7 @@ namespace Media_player_skin_V2._0
 
         private void listViewMedia_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (listViewMedia.SelectedItem != null && listViewMedia.SelectedItem.ToString() == "Media_player_skin_V2._0.Media")
+            if (listViewMedia.SelectedItem != null && listViewMedia.SelectedItem.GetType() == typeof(Media))
             {
                 Media mediaSelected = listViewMedia.SelectedItem as Media;
                 if (mediaSelected != null)

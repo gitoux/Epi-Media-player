@@ -22,6 +22,7 @@ namespace Media_player_skin_V2._0
         public TreeViewItem tmpNode;
         public Media currentMedia = null;
         public Playlist currentPlaylist = null;
+        public int MediaNum = 0;
         public MediaElement player;
         public bool openBoxRename;
 
@@ -96,6 +97,7 @@ namespace Media_player_skin_V2._0
                                 player.SpeedRatio = 1.0;
                                 currentMedia = pl[i].List[j];
                                 currentPlaylist = pl[i];
+                                MediaNum = j;
                                 player.Source = new Uri(currentMedia.path);
                                 player.Play();
                                 break;
@@ -128,42 +130,45 @@ namespace Media_player_skin_V2._0
 
         public void AddMediaInPlaylist()
         {
-              Media tmpMedia = (Media)wpfListMedia.SelectedItem;
-               TreeViewItem tmpItem = (TreeViewItem)wpfTree.SelectedItem;
-               if (tmpMedia == null)
-               {
-                   MessageBox.Show("Sélectionnez un média à ajouter à la playlist.");
-                   return;
-               }
-               if (tmpItem.Parent.GetType().ToString() == "System.Windows.Controls.TreeView")
-               {
-                   Playlist tmpPl;
-                   for (int i = 0; i < pl.Count; i++)
-                       if (pl[i].Name == tmpItem.Header.ToString())
-                       {
-                           tmpPl = pl[i];
-                           tmpPl.List.Add(tmpMedia);
-                           TreeViewItem newSong = new TreeViewItem();
-                           newSong.MouseDoubleClick += new MouseButtonEventHandler(playOrNotSong);
-                           newSong.Header = tmpMedia.name;
-                           newSong.Foreground = Brushes.White;
-                           tmpItem.Items.Add(newSong);
-                           using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlist.xml", FileMode.OpenOrCreate))
-                           {
-                               XmlSerializer xml = new XmlSerializer(typeof(List<Playlist>));
-                               xml.Serialize(fs, pl);
-                           }
-                           break;
-                       }
-               }
-               else
-                   MessageBox.Show("Selectionnez une playlist");
+            Media tmpMedia = null;
+            TreeViewItem tmpItem = (TreeViewItem)wpfTree.SelectedItem;
+
+            if (wpfListMedia.SelectedItem != null && wpfListMedia.SelectedItem.GetType() == typeof(Media))
+                tmpMedia = (Media)wpfListMedia.SelectedItem;
+            if (tmpMedia == null)
+            {
+                MessageBox.Show("Sélectionnez un média à ajouter à la playlist.");
+                return;
+            }
+            if (tmpItem.Parent.GetType() == typeof(TreeView))
+            {
+                Playlist tmpPl;
+                for (int i = 0; i < pl.Count; i++)
+                if (pl[i].Name == tmpItem.Header.ToString())
+                {
+                    tmpPl = pl[i];
+                    tmpPl.List.Add(tmpMedia);
+                    TreeViewItem newSong = new TreeViewItem();
+                    newSong.MouseDoubleClick += new MouseButtonEventHandler(playOrNotSong);
+                    newSong.Header = tmpMedia.name;
+                    newSong.Foreground = Brushes.White;
+                    tmpItem.Items.Add(newSong);
+                    using (var fs = new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\playlist.xml", FileMode.OpenOrCreate))
+                    {
+                        XmlSerializer xml = new XmlSerializer(typeof(List<Playlist>));
+                        xml.Serialize(fs, pl);
+                    }
+                    break;
+                }
+            }
+            else
+                MessageBox.Show("Sélectionnez une playlist.");
         }
 
         public void deleteMediaFromPlaylist()
         {
             TreeViewItem tmpMedia = (TreeViewItem)wpfTree.SelectedItem;
-           if (tmpMedia.Parent.GetType().ToString() != "System.Windows.Controls.TreeView")
+           if (tmpMedia.Parent.GetType() != typeof(TreeView))
             {
                 TreeViewItem tmpPl = tmpMedia.Parent as TreeViewItem;
                 for (int i = 0; i < pl.Count; i++)
@@ -187,7 +192,7 @@ namespace Media_player_skin_V2._0
                     }
             }
             else
-                MessageBox.Show("Select a song please");
+                MessageBox.Show("Selectionnez un média.");
         }
 
         public void addNewPlaylist()
@@ -247,7 +252,7 @@ namespace Media_player_skin_V2._0
                     return;
                 }
             }
-            MessageBox.Show("Selectionnez une Playlist");
+            MessageBox.Show("Sélectionnez une Playlist.");
         }
     }
 }

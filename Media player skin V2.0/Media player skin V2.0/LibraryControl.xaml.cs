@@ -144,8 +144,8 @@ namespace Media_player_skin_V2._0
         {
             if (LibraryPath.SelectedItem != null)
             {
-                Type toto = LibraryPath.SelectedItem.GetType();
-                if (toto.ToString() == "Media_player_skin_V2._0.directoryMedia")
+                Type select = LibraryPath.SelectedItem.GetType();
+                if (select == typeof(directoryMedia))
                 {
                     directoryMedia tmp = LibraryPath.SelectedItem as directoryMedia;
                     foreach (DirMedia m in listDir)

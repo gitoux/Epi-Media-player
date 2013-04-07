@@ -81,8 +81,6 @@ namespace Media_player_skin_V2._0
 
     public partial class MainWindow : Window
     {
-        private int MediaNum = 0;
-
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
             lib.refreshLibrary();
